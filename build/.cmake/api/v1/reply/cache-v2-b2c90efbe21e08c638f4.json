@@ -707,7 +707,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Gobang"
+			"value" : "GoBang"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1050,7 +1050,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Gobang_BINARY_DIR",
+			"name" : "GoBang_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1062,7 +1062,7 @@
 			"value" : "/home/suiqingying/projects/Gobang/build"
 		},
 		{
-			"name" : "Gobang_IS_TOP_LEVEL",
+			"name" : "GoBang_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1074,7 +1074,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Gobang_SOURCE_DIR",
+			"name" : "GoBang_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1084,6 +1084,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/suiqingying/projects/Gobang"
+		},
+		{
+			"name" : "SDL2_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SDL2"
 		}
 	],
 	"kind" : "cache",

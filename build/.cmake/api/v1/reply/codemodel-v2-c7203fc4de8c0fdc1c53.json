@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Gobang",
+					"name" : "GoBang",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Gobang::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Gobang-Debug-61981f4bf1538614e8e7.json",
-					"name" : "Gobang",
+					"id" : "GoBang::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GoBang-Debug-2925ec33c189dd183d1d.json",
+					"name" : "GoBang",
 					"projectIndex" : 0
 				}
 			]

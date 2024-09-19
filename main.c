@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include "main.h"
+
 
 int main() {
-    printf("Hello, Gobang!\n");
+    draw();
+
     return 0;
 }

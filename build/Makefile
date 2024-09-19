@@ -117,24 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Gobang
+# Target rules for targets named GoBang
 
 # Build rule for target.
-Gobang: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Gobang
-.PHONY : Gobang
+GoBang: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GoBang
+.PHONY : GoBang
 
 # fast build rule for target.
-Gobang/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/build
-.PHONY : Gobang/fast
+GoBang/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/build
+.PHONY : GoBang/fast
+
+draw.o: draw.c.o
+.PHONY : draw.o
+
+# target to build an object file
+draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.o
+.PHONY : draw.c.o
+
+draw.i: draw.c.i
+.PHONY : draw.i
+
+# target to preprocess a source file
+draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.i
+.PHONY : draw.c.i
+
+draw.s: draw.c.s
+.PHONY : draw.s
+
+# target to generate assembly for a file
+draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.s
+.PHONY : draw.c.s
 
 main.o: main.c.o
 .PHONY : main.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -142,7 +166,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -150,7 +174,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -161,7 +185,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Gobang"
+	@echo "... GoBang"
+	@echo "... draw.o"
+	@echo "... draw.i"
+	@echo "... draw.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
