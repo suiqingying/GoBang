@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/suiqingying/projects/Gobang/build",
+  "command": "/usr/bin/cc   -g -o CMakeFiles/Gobang.dir/main.c.o -c /home/suiqingying/projects/Gobang/main.c",
+  "file": "/home/suiqingying/projects/Gobang/main.c"
+}
+]
