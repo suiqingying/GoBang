@@ -153,6 +153,30 @@ draw.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.s
 .PHONY : draw.c.s
 
+evaluation.o: evaluation.c.o
+.PHONY : evaluation.o
+
+# target to build an object file
+evaluation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.o
+.PHONY : evaluation.c.o
+
+evaluation.i: evaluation.c.i
+.PHONY : evaluation.i
+
+# target to preprocess a source file
+evaluation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.i
+.PHONY : evaluation.c.i
+
+evaluation.s: evaluation.c.s
+.PHONY : evaluation.s
+
+# target to generate assembly for a file
+evaluation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.s
+.PHONY : evaluation.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -177,6 +201,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.s
 .PHONY : main.c.s
 
+search.o: search.c.o
+.PHONY : search.o
+
+# target to build an object file
+search.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.o
+.PHONY : search.c.o
+
+search.i: search.c.i
+.PHONY : search.i
+
+# target to preprocess a source file
+search.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.i
+.PHONY : search.c.i
+
+search.s: search.c.s
+.PHONY : search.s
+
+# target to generate assembly for a file
+search.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.s
+.PHONY : search.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +237,15 @@ help:
 	@echo "... draw.o"
 	@echo "... draw.i"
 	@echo "... draw.s"
+	@echo "... evaluation.o"
+	@echo "... evaluation.i"
+	@echo "... evaluation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... search.o"
+	@echo "... search.i"
+	@echo "... search.s"
 .PHONY : help
 
 

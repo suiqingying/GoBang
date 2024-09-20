@@ -1,7 +1,10 @@
-CMakeFiles/GoBang.dir/draw.c.o: /home/suiqingying/projects/GoBang/draw.c \
- /usr/include/stdc-predef.h /home/suiqingying/projects/GoBang/draw.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+CMakeFiles/GoBang.dir/game_function.c.o: \
+ /home/suiqingying/projects/GoBang/game_function.c \
+ /usr/include/stdc-predef.h \
+ /home/suiqingying/projects/GoBang/game_function.h \
+ /home/suiqingying/projects/GoBang/draw.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
  /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \

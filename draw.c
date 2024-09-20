@@ -65,7 +65,7 @@ void init()
         return;
     }
 
-    win = SDL_CreateWindow("Gobang", 100, 100, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+    win = SDL_CreateWindow("GoBang", 100, 100, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
     if (win == NULL)
     {
         printf("SDL_CreateWindow Error: %s\n", SDL_GetError());

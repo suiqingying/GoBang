@@ -1,7 +1,10 @@
 #include "main.h"
 
-int game_mode; // 1 表示人人对战，2 表示人机对战
+const int dx[] = { 1, 0, 1, 1 };
+const int dy[] = { 0, 1, 1, -1 };
+
 int step, player = 1, mycolor;
+int game_mode; // 1 表示人人对战，2 表示人机对战
 bool running = true;
 
 int main()
@@ -95,6 +98,8 @@ void move()
 
 void AImove()
 {
+    
+    #ifdef DEBUG
     int bestX = -1, bestY = -1, bestScore = -1 << 20;
     for (int x = 0; x < BOARD_SIZE; x++) {
         for (int y = 0; y < BOARD_SIZE; y++) {
@@ -115,12 +120,16 @@ void AImove()
         printf("you lost,hahaha\n");
         running = false;
     }
+    #endif
     draw();
 }
 
-bool isInBounds(int x, int y)
+void pause()
 {
-    return x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE;
+    printf("Press Enter key to continue...");
+    while (getchar() != '\n')
+        ;
+    getchar();
 }
 
 bool isWin(int x, int y, int player)
@@ -150,14 +159,4 @@ bool isWin(int x, int y, int player)
         }
     }
     return false;
-}
-
-bool isBoardFull()
-{
-    return step == BOARD_SIZE * BOARD_SIZE;
-}
-
-int evaluate()
-{
-    return 0;
 }
