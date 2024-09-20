@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/suiqingying/projects/GoBang/build"
+			"value" : "/home/suiqingying/projects/Gobang/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -463,7 +463,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/suiqingying/projects/GoBang"
+			"value" : "/home/suiqingying/projects/Gobang"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1059,7 +1059,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/suiqingying/projects/GoBang/build"
+			"value" : "/home/suiqingying/projects/Gobang/build"
 		},
 		{
 			"name" : "GoBang_IS_TOP_LEVEL",
@@ -1083,7 +1083,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/suiqingying/projects/GoBang"
+			"value" : "/home/suiqingying/projects/Gobang"
 		},
 		{
 			"name" : "SDL2_DIR",

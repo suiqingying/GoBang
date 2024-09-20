@@ -1,3 +1,3 @@
-/home/suiqingying/projects/GoBang/build/CMakeFiles/GoBang.dir
-/home/suiqingying/projects/GoBang/build/CMakeFiles/edit_cache.dir
-/home/suiqingying/projects/GoBang/build/CMakeFiles/rebuild_cache.dir
+/home/suiqingying/projects/Gobang/build/CMakeFiles/GoBang.dir
+/home/suiqingying/projects/Gobang/build/CMakeFiles/edit_cache.dir
+/home/suiqingying/projects/Gobang/build/CMakeFiles/rebuild_cache.dir

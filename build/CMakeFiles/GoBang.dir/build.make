@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suiqingying/projects/GoBang
+CMAKE_SOURCE_DIR = /home/suiqingying/projects/Gobang
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suiqingying/projects/GoBang/build
+CMAKE_BINARY_DIR = /home/suiqingying/projects/Gobang/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GoBang.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/GoBang.dir/flags.make
 CMakeFiles/GoBang.dir/main.c.o: CMakeFiles/GoBang.dir/flags.make
 CMakeFiles/GoBang.dir/main.c.o: ../main.c
 CMakeFiles/GoBang.dir/main.c.o: CMakeFiles/GoBang.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/GoBang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GoBang.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/main.c.o -MF CMakeFiles/GoBang.dir/main.c.o.d -o CMakeFiles/GoBang.dir/main.c.o -c /home/suiqingying/projects/GoBang/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GoBang.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/main.c.o -MF CMakeFiles/GoBang.dir/main.c.o.d -o CMakeFiles/GoBang.dir/main.c.o -c /home/suiqingying/projects/Gobang/main.c
 
 CMakeFiles/GoBang.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GoBang.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/GoBang/main.c > CMakeFiles/GoBang.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/Gobang/main.c > CMakeFiles/GoBang.dir/main.c.i
 
 CMakeFiles/GoBang.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GoBang.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/GoBang/main.c -o CMakeFiles/GoBang.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/Gobang/main.c -o CMakeFiles/GoBang.dir/main.c.s
 
 CMakeFiles/GoBang.dir/draw.c.o: CMakeFiles/GoBang.dir/flags.make
 CMakeFiles/GoBang.dir/draw.c.o: ../draw.c
 CMakeFiles/GoBang.dir/draw.c.o: CMakeFiles/GoBang.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/GoBang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GoBang.dir/draw.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/draw.c.o -MF CMakeFiles/GoBang.dir/draw.c.o.d -o CMakeFiles/GoBang.dir/draw.c.o -c /home/suiqingying/projects/GoBang/draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GoBang.dir/draw.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/draw.c.o -MF CMakeFiles/GoBang.dir/draw.c.o.d -o CMakeFiles/GoBang.dir/draw.c.o -c /home/suiqingying/projects/Gobang/draw.c
 
 CMakeFiles/GoBang.dir/draw.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GoBang.dir/draw.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/GoBang/draw.c > CMakeFiles/GoBang.dir/draw.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/Gobang/draw.c > CMakeFiles/GoBang.dir/draw.c.i
 
 CMakeFiles/GoBang.dir/draw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GoBang.dir/draw.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/GoBang/draw.c -o CMakeFiles/GoBang.dir/draw.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/Gobang/draw.c -o CMakeFiles/GoBang.dir/draw.c.s
 
 CMakeFiles/GoBang.dir/search.c.o: CMakeFiles/GoBang.dir/flags.make
 CMakeFiles/GoBang.dir/search.c.o: ../search.c
 CMakeFiles/GoBang.dir/search.c.o: CMakeFiles/GoBang.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/GoBang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GoBang.dir/search.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/search.c.o -MF CMakeFiles/GoBang.dir/search.c.o.d -o CMakeFiles/GoBang.dir/search.c.o -c /home/suiqingying/projects/GoBang/search.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GoBang.dir/search.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/search.c.o -MF CMakeFiles/GoBang.dir/search.c.o.d -o CMakeFiles/GoBang.dir/search.c.o -c /home/suiqingying/projects/Gobang/search.c
 
 CMakeFiles/GoBang.dir/search.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GoBang.dir/search.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/GoBang/search.c > CMakeFiles/GoBang.dir/search.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/Gobang/search.c > CMakeFiles/GoBang.dir/search.c.i
 
 CMakeFiles/GoBang.dir/search.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GoBang.dir/search.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/GoBang/search.c -o CMakeFiles/GoBang.dir/search.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/Gobang/search.c -o CMakeFiles/GoBang.dir/search.c.s
 
 CMakeFiles/GoBang.dir/evaluation.c.o: CMakeFiles/GoBang.dir/flags.make
 CMakeFiles/GoBang.dir/evaluation.c.o: ../evaluation.c
 CMakeFiles/GoBang.dir/evaluation.c.o: CMakeFiles/GoBang.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/GoBang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/GoBang.dir/evaluation.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/evaluation.c.o -MF CMakeFiles/GoBang.dir/evaluation.c.o.d -o CMakeFiles/GoBang.dir/evaluation.c.o -c /home/suiqingying/projects/GoBang/evaluation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/GoBang.dir/evaluation.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GoBang.dir/evaluation.c.o -MF CMakeFiles/GoBang.dir/evaluation.c.o.d -o CMakeFiles/GoBang.dir/evaluation.c.o -c /home/suiqingying/projects/Gobang/evaluation.c
 
 CMakeFiles/GoBang.dir/evaluation.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GoBang.dir/evaluation.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/GoBang/evaluation.c > CMakeFiles/GoBang.dir/evaluation.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/suiqingying/projects/Gobang/evaluation.c > CMakeFiles/GoBang.dir/evaluation.c.i
 
 CMakeFiles/GoBang.dir/evaluation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GoBang.dir/evaluation.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/GoBang/evaluation.c -o CMakeFiles/GoBang.dir/evaluation.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/suiqingying/projects/Gobang/evaluation.c -o CMakeFiles/GoBang.dir/evaluation.c.s
 
 # Object files for target GoBang
 GoBang_OBJECTS = \
@@ -142,7 +142,7 @@ GoBang: CMakeFiles/GoBang.dir/evaluation.c.o
 GoBang: CMakeFiles/GoBang.dir/build.make
 GoBang: /usr/lib/x86_64-linux-gnu/libSDL2.so
 GoBang: CMakeFiles/GoBang.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suiqingying/projects/GoBang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable GoBang"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable GoBang"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GoBang.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +154,6 @@ CMakeFiles/GoBang.dir/clean:
 .PHONY : CMakeFiles/GoBang.dir/clean
 
 CMakeFiles/GoBang.dir/depend:
-	cd /home/suiqingying/projects/GoBang/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suiqingying/projects/GoBang /home/suiqingying/projects/GoBang /home/suiqingying/projects/GoBang/build /home/suiqingying/projects/GoBang/build /home/suiqingying/projects/GoBang/build/CMakeFiles/GoBang.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/suiqingying/projects/Gobang/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/suiqingying/projects/Gobang /home/suiqingying/projects/Gobang /home/suiqingying/projects/Gobang/build /home/suiqingying/projects/Gobang/build /home/suiqingying/projects/Gobang/build/CMakeFiles/GoBang.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GoBang.dir/depend
 
