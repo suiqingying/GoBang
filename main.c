@@ -15,6 +15,8 @@ int main()
         TwoPlayerBattle();
     } else if (game_mode == 2) {
         HumanVsAI();
+    } else {
+        printf("无效的选择！\n");
     }
     deinit();
     return 0;
@@ -42,8 +44,11 @@ void HumanVsAI()
     printf("1. 黑棋\n");
     printf("2. 白棋\n");
     scanf("%d", &mycolor);
-    init();
-    draw();
+    if (mycolor != 1 & mycolor != 2) {
+        printf("无效的选择！\n");
+        return;
+    }
+    init(); draw();
     while (running) {
         step++;
         if (player == mycolor) {

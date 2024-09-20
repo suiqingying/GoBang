@@ -1,12 +1,12 @@
 [
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -isystem /usr/include/SDL2 -g -o CMakeFiles/GoBang.dir/main.c.o -c /home/suiqingying/projects/Gobang/main.c",
-  "file": "/home/suiqingying/projects/Gobang/main.c"
+  "directory": "/home/suiqingying/projects/GoBang/build",
+  "command": "/usr/bin/cc  -isystem /usr/include/SDL2 -g -o CMakeFiles/GoBang.dir/main.c.o -c /home/suiqingying/projects/GoBang/main.c",
+  "file": "/home/suiqingying/projects/GoBang/main.c"
 },
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -isystem /usr/include/SDL2 -g -o CMakeFiles/GoBang.dir/draw.c.o -c /home/suiqingying/projects/Gobang/draw.c",
-  "file": "/home/suiqingying/projects/Gobang/draw.c"
+  "directory": "/home/suiqingying/projects/GoBang/build",
+  "command": "/usr/bin/cc  -isystem /usr/include/SDL2 -g -o CMakeFiles/GoBang.dir/draw.c.o -c /home/suiqingying/projects/GoBang/draw.c",
+  "file": "/home/suiqingying/projects/GoBang/draw.c"
 }
 ]

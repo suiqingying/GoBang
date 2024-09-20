@@ -1,6 +1,6 @@
-CMakeFiles/GoBang.dir/main.c.o: /home/suiqingying/projects/Gobang/main.c \
- /usr/include/stdc-predef.h /home/suiqingying/projects/Gobang/main.h \
- /home/suiqingying/projects/Gobang/draw.h /usr/include/SDL2/SDL.h \
+CMakeFiles/GoBang.dir/main.c.o: /home/suiqingying/projects/GoBang/main.c \
+ /usr/include/stdc-predef.h /home/suiqingying/projects/GoBang/main.h \
+ /home/suiqingying/projects/GoBang/draw.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \

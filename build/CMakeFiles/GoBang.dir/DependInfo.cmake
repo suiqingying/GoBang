@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/suiqingying/projects/Gobang/draw.c" "CMakeFiles/GoBang.dir/draw.c.o" "gcc" "CMakeFiles/GoBang.dir/draw.c.o.d"
-  "/home/suiqingying/projects/Gobang/main.c" "CMakeFiles/GoBang.dir/main.c.o" "gcc" "CMakeFiles/GoBang.dir/main.c.o.d"
+  "/home/suiqingying/projects/GoBang/draw.c" "CMakeFiles/GoBang.dir/draw.c.o" "gcc" "CMakeFiles/GoBang.dir/draw.c.o.d"
+  "/home/suiqingying/projects/GoBang/main.c" "CMakeFiles/GoBang.dir/main.c.o" "gcc" "CMakeFiles/GoBang.dir/main.c.o.d"
   )
 
 # Targets to which this target links.
