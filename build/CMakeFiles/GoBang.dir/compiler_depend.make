@@ -3,6 +3,7 @@
 
 CMakeFiles/GoBang.dir/draw.c.o: ../draw.c \
   /usr/include/stdc-predef.h \
+  ../draw.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -215,6 +216,8 @@ CMakeFiles/GoBang.dir/draw.c.o: ../draw.c \
 
 CMakeFiles/GoBang.dir/main.c.o: ../main.c \
   /usr/include/stdc-predef.h \
+  ../main.h \
+  ../draw.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -426,6 +429,8 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
   /usr/include/SDL2/SDL_misc.h
 
 
+../main.h:
+
 /usr/include/SDL2/SDL_misc.h:
 
 /usr/include/SDL2/SDL_timer.h:
@@ -590,14 +595,6 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 
 /usr/include/string.h:
 
-/usr/include/features-time64.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/amxtileintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
@@ -607,6 +604,10 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 /usr/include/ctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/SDL2/SDL_clipboard.h:
 
@@ -680,6 +681,14 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 
 ../draw.c:
 
+/usr/include/features-time64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitintrin.h:
+
 /usr/include/SDL2/SDL_assert.h:
 
 /usr/include/stdlib.h:
@@ -700,6 +709,8 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 
 /usr/include/wchar.h:
 
+../draw.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
@@ -714,13 +725,13 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 
 /usr/include/inttypes.h:
 
-/usr/include/SDL2/SDL_platform.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/endian.h:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
+/usr/include/SDL2/SDL_platform.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 ../main.c:
 
@@ -843,7 +854,3 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h:

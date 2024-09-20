@@ -4,6 +4,7 @@
 CMakeFiles/GoBang.dir/draw.c.o
  /home/suiqingying/projects/Gobang/draw.c
  /usr/include/stdc-predef.h
+ /home/suiqingying/projects/Gobang/draw.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_main.h
  /usr/include/SDL2/SDL_stdinc.h
@@ -217,6 +218,8 @@ CMakeFiles/GoBang.dir/draw.c.o
 CMakeFiles/GoBang.dir/main.c.o
  /home/suiqingying/projects/Gobang/main.c
  /usr/include/stdc-predef.h
+ /home/suiqingying/projects/Gobang/main.h
+ /home/suiqingying/projects/Gobang/draw.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_main.h
  /usr/include/SDL2/SDL_stdinc.h
