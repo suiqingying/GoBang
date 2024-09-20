@@ -7,11 +7,8 @@
 #define GRID_SIZE 40
 #define BOARD_SIZE 15
 
-extern int player;
-extern int running;
 extern int board[BOARD_SIZE][BOARD_SIZE];
 
-extern SDL_Event e;
 extern SDL_Window *win;
 extern SDL_Renderer *renderer;
 

@@ -1,6 +1,8 @@
 #include "draw.h"
 #include <math.h>
 
+int board[BOARD_SIZE][BOARD_SIZE];
+
 SDL_Window *win;
 SDL_Renderer *renderer;
 

@@ -426,7 +426,8 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
   /usr/include/SDL2/SDL_timer.h \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
-  /usr/include/SDL2/SDL_misc.h
+  /usr/include/SDL2/SDL_misc.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
 
 
 ../main.h:
@@ -442,6 +443,8 @@ CMakeFiles/GoBang.dir/main.c.o: ../main.c \
 /usr/include/SDL2/SDL_metal.h:
 
 /usr/include/SDL2/SDL_messagebox.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
 
 /usr/include/SDL2/SDL_log.h:
 
