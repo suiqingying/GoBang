@@ -1,5 +1,7 @@
 #include "search.h"
 
+node pos;
+
 bool isInBounds(int x, int y)
 {
     return x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE;
@@ -22,13 +24,5 @@ void MinMax(int depth, int color, int x, int y)
     if (depth == 0) {
         return;
     }
-    for (int i = 0; i < 4; i++) {
-        int nx = x + dx[i];
-        int ny = y + dy[i];
-        if (isInBounds(nx, ny) && board[nx][ny] == 0) {
-            board[nx][ny] = color;
-            MinMax(depth - 1, -color, nx, ny);
-            board[nx][ny] = 0;
-        }
-    }
+    
 }

@@ -2,7 +2,7 @@
 #include "search.h"
 
 
-extern int  game_mode;
+extern int game_mode;
 extern int step, player, mycolor;
 extern bool running;
 

@@ -98,29 +98,8 @@ void move()
 
 void AImove()
 {
-    
-    #ifdef DEBUG
-    int bestX = -1, bestY = -1, bestScore = -1 << 20;
-    for (int x = 0; x < BOARD_SIZE; x++) {
-        for (int y = 0; y < BOARD_SIZE; y++) {
-            if (board[x][y] == 0) {
-                board[x][y] = player;
-                int score = evaluate();
-                board[x][y] = 0;
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestX = x;
-                    bestY = y;
-                }
-            }
-        }
-    }
-    board[bestX][bestY] = player;
-    if (isWin(bestX, bestY, player)) {
-        printf("you lost,hahaha\n");
-        running = false;
-    }
-    #endif
+    MinMax(maxDepth, player, -1, -1);
+    board[pos.x][pos.y] = player;
     draw();
 }
 
