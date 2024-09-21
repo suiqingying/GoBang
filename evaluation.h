@@ -1,3 +1,3 @@
 #include "search.h"
 
-int GetWholeScore();
+int GetWholeScore(int color);

@@ -51,7 +51,8 @@ void HumanVsAI()
         printf("无效的选择！\n");
         return;
     }
-    init(); draw();
+    init();
+    draw();
     while (running) {
         step++;
         if (player == mycolor) {
@@ -98,37 +99,22 @@ void move()
 
 void AImove()
 {
-    
-    #ifdef DEBUG
-    int bestX = -1, bestY = -1, bestScore = -1 << 20;
-    for (int x = 0; x < BOARD_SIZE; x++) {
-        for (int y = 0; y < BOARD_SIZE; y++) {
-            if (board[x][y] == 0) {
-                board[x][y] = player;
-                int score = evaluate();
-                board[x][y] = 0;
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestX = x;
-                    bestY = y;
-                }
-            }
-        }
-    }
-    board[bestX][bestY] = player;
-    if (isWin(bestX, bestY, player)) {
-        printf("you lost,hahaha\n");
+    int alpha = -MAX_SCORE, beta = MAX_SCORE;
+    MinMax(maxDepth, player, alpha, beta);
+    board[pos.x][pos.y] = player;
+    if (isWin(pos.x, pos.y, player)) {
+        printf("You Lost!RUBBISH!\n");
         running = false;
     }
-    #endif
     draw();
 }
 
 void pause()
 {
     printf("Press Enter key to continue...");
-    while (getchar() != '\n')
+    while (getchar() != '\n') {
         ;
+    }
     getchar();
 }
 

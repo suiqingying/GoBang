@@ -6,7 +6,20 @@
 extern const int dx[];
 extern const int dy[];
 
+typedef struct node{
+    int x, y;
+    int score;
+} node;
+
+typedef struct point{
+    int x, y;
+    int score;
+} point;
+
+extern int alpha, beta;
+extern node pos;
+
 bool isInBounds(int x, int y);
 bool isBoardFull();
-void MinMax(int depth, int color, int x, int y);
+int MinMax(int depth, int color, int alpha, int beta);
 void GetPoints(int color);
