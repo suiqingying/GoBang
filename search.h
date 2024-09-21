@@ -11,11 +11,6 @@ typedef struct node{
     int score;
 } node;
 
-typedef struct point{
-    int x, y;
-    int score;
-} point;
-
 extern int alpha, beta;
 extern node pos;
 
