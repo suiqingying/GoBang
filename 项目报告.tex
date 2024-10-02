@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+
+\title{五子棋项目报告}
+\author{潘宇轩}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    采用搜索算法完成五子棋的人机对战
+\end{abstract}
+
+\tableofcontents
+\part{第一版}
+
+\section{方法}
+
+\subsection{搜索方法}
+minimax算法, alpha-beta剪枝
+
+\subsection{可视化}
+使用SDL2库
+
+\section{分析}
+可以初步五子棋的人机对战,但是效率不高。仅能搜索2层。
+
+\section{计划}
+减少搜索的棋子数量，提高搜索层数。
+
+\end{document}
