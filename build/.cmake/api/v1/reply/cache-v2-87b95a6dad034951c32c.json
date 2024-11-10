@@ -1166,18 +1166,6 @@
 			"value" : "-D_REENTRANT"
 		},
 		{
-			"name" : "SDL2_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for SDL2."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SDL2"
-		},
-		{
 			"name" : "SDL2_FOUND",
 			"properties" : 
 			[
@@ -1980,18 +1968,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
-		},
-		{
-			"name" : "SDL2_ttf_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for SDL2_ttf."
-				}
-			],
-			"type" : "PATH",
-			"value" : "SDL2_ttf_DIR-NOTFOUND"
 		},
 		{
 			"name" : "__pkg_config_arguments_SDL2",
