@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/suiqingying/projects/Gobang
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suiqingying/projects/Gobang/build
+CMAKE_BINARY_DIR = /home/suiqingying/projects/Gobang
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles /home/suiqingying/projects/Gobang/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/CMakeFiles /home/suiqingying/projects/Gobang//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Gobang
+# Target rules for targets named GoBang
 
 # Build rule for target.
-Gobang: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Gobang
-.PHONY : Gobang
+GoBang: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GoBang
+.PHONY : GoBang
 
 # fast build rule for target.
-Gobang/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/build
-.PHONY : Gobang/fast
+GoBang/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/build
+.PHONY : GoBang/fast
 
 draw.o: draw.c.o
 .PHONY : draw.o
 
 # target to build an object file
 draw.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/draw.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.o
 .PHONY : draw.c.o
 
 draw.i: draw.c.i
@@ -142,7 +142,7 @@ draw.i: draw.c.i
 
 # target to preprocess a source file
 draw.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/draw.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.i
 .PHONY : draw.c.i
 
 draw.s: draw.c.s
@@ -150,7 +150,7 @@ draw.s: draw.c.s
 
 # target to generate assembly for a file
 draw.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/draw.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/draw.c.s
 .PHONY : draw.c.s
 
 evaluation.o: evaluation.c.o
@@ -158,7 +158,7 @@ evaluation.o: evaluation.c.o
 
 # target to build an object file
 evaluation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/evaluation.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.o
 .PHONY : evaluation.c.o
 
 evaluation.i: evaluation.c.i
@@ -166,7 +166,7 @@ evaluation.i: evaluation.c.i
 
 # target to preprocess a source file
 evaluation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/evaluation.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.i
 .PHONY : evaluation.c.i
 
 evaluation.s: evaluation.c.s
@@ -174,39 +174,15 @@ evaluation.s: evaluation.c.s
 
 # target to generate assembly for a file
 evaluation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/evaluation.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/evaluation.c.s
 .PHONY : evaluation.c.s
-
-judge.o: judge.c.o
-.PHONY : judge.o
-
-# target to build an object file
-judge.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.o
-.PHONY : judge.c.o
-
-judge.i: judge.c.i
-.PHONY : judge.i
-
-# target to preprocess a source file
-judge.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.i
-.PHONY : judge.c.i
-
-judge.s: judge.c.s
-.PHONY : judge.s
-
-# target to generate assembly for a file
-judge.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.s
-.PHONY : judge.c.s
 
 main.o: main.c.o
 .PHONY : main.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -214,7 +190,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -222,7 +198,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/main.c.s
 .PHONY : main.c.s
 
 search.o: search.c.o
@@ -230,7 +206,7 @@ search.o: search.c.o
 
 # target to build an object file
 search.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/search.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.o
 .PHONY : search.c.o
 
 search.i: search.c.i
@@ -238,7 +214,7 @@ search.i: search.c.i
 
 # target to preprocess a source file
 search.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/search.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.i
 .PHONY : search.c.i
 
 search.s: search.c.s
@@ -246,7 +222,7 @@ search.s: search.c.s
 
 # target to generate assembly for a file
 search.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/search.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/search.c.s
 .PHONY : search.c.s
 
 # Help Target
@@ -257,16 +233,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Gobang"
+	@echo "... GoBang"
 	@echo "... draw.o"
 	@echo "... draw.i"
 	@echo "... draw.s"
 	@echo "... evaluation.o"
 	@echo "... evaluation.i"
 	@echo "... evaluation.s"
-	@echo "... judge.o"
-	@echo "... judge.i"
-	@echo "... judge.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

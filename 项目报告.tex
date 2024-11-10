@@ -1,10 +1,11 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{ctexart}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage{xeCJK}
-
+\hypersetup{
+    hidelinks
+}
 \title{五子棋项目报告}
 \author{潘宇轩}
 \date{\today}
@@ -18,20 +19,26 @@
 \end{abstract}
 
 \tableofcontents
-\part{第一版}
-
-\section{方法}
+\section{第一版}
 
 \subsection{搜索方法}
+
 minimax算法, alpha-beta剪枝
 
 \subsection{可视化}
-使用SDL2库
+使用SDL2库,实现棋盘、棋子可视化.修改颜色使得接近真实五子棋的颜色
 
-\section{分析}
+\subsection{分析}
 可以初步五子棋的人机对战,但是效率不高。仅能搜索2层。
 
-\section{计划}
+\subsection{计划}
 减少搜索的棋子数量，提高搜索层数。
 
+\section{第二版}
+
+\subsection{裁判功能}
+完善裁判功能,添加禁手规则
+
+\subsection{可视化}
+添加棋盘标号
 \end{document}

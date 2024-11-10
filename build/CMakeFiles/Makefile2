@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/suiqingying/projects/Gobang/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/GoBang.dir/all
+all: CMakeFiles/Gobang.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/GoBang.dir/clean
+clean: CMakeFiles/Gobang.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/GoBang.dir
+# Target rules for target CMakeFiles/Gobang.dir
 
 # All Build rule for target.
-CMakeFiles/GoBang.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target GoBang"
-.PHONY : CMakeFiles/GoBang.dir/all
+CMakeFiles/Gobang.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/suiqingying/projects/Gobang/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Gobang"
+.PHONY : CMakeFiles/Gobang.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/GoBang.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GoBang.dir/all
+CMakeFiles/Gobang.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Gobang.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles 0
-.PHONY : CMakeFiles/GoBang.dir/rule
+.PHONY : CMakeFiles/Gobang.dir/rule
 
 # Convenience name for target.
-GoBang: CMakeFiles/GoBang.dir/rule
-.PHONY : GoBang
+Gobang: CMakeFiles/Gobang.dir/rule
+.PHONY : Gobang
 
 # clean rule for target.
-CMakeFiles/GoBang.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GoBang.dir/build.make CMakeFiles/GoBang.dir/clean
-.PHONY : CMakeFiles/GoBang.dir/clean
+CMakeFiles/Gobang.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/clean
+.PHONY : CMakeFiles/Gobang.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

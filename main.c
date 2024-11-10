@@ -1,8 +1,5 @@
 #include "main.h"
 
-const int dx[] = { 1, 0, 1, 1 };
-const int dy[] = { 0, 1, 1, -1 };
-
 int step, player = 1, mycolor;
 int game_mode; // 1 表示人人对战，2 表示人机对战
 bool running = true;
@@ -80,16 +77,17 @@ void move()
             } else if (e.type == SDL_MOUSEBUTTONDOWN) {
                 int x = e.button.x / GRID_SIZE;
                 int y = e.button.y / GRID_SIZE;
+                if(step == 1) {
+                    if (x !=7 || y != 7) {
+                        printf("Please place your stone at the H8.\n");
+                        continue;
+                    }
+                }
                 if (board[x][y] == 0) {
+                    running = judge(x, y, player, game_mode);
                     board[x][y] = player;
                     success = true;
-                    if (isWin(x, y, player)) {
-                        if (game_mode == 1)
-                            printf("Player %d wins!\n", player);
-                        else
-                            printf("You win!\n");
-                        running = false;
-                    }
+                    printf("%c %d\n", x + 'A', 15 - y);
                 }
             }
         }
@@ -100,8 +98,14 @@ void move()
 void AImove()
 {
     int alpha = -MAX_SCORE, beta = MAX_SCORE;
-    MinMax(maxDepth, player, alpha, beta);
+    if (step == 1) {
+        pos.x = 7;
+        pos.y = 7;
+    } else {
+        MinMax(maxDepth, player, alpha, beta);
+    }
     board[pos.x][pos.y] = player;
+    printf("%x %x\n", pos.x, pos.y);
     if (isWin(pos.x, pos.y, player)) {
         printf("You Lost!RUBBISH!\n");
         running = false;
@@ -118,31 +122,3 @@ void pause()
     getchar();
 }
 
-bool isWin(int x, int y, int player)
-{
-    for (int i = 0; i < 4; i++) {
-        int count = 1;
-        for (int j = 1; j <= 4; j++) {
-            int newX = x + dx[i] * j;
-            int newY = y + dy[i] * j;
-            if (isInBounds(newX, newY) && board[newX][newY] == player) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        for (int j = 1; j <= 4; j++) {
-            int newX = x - dx[i] * j;
-            int newY = y - dy[i] * j;
-            if (isInBounds(newX, newY) && board[newX][newY] == player) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        if (count >= 5) {
-            return true;
-        }
-    }
-    return false;
-}

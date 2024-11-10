@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/GoBang.dir/main.c.o CMakeFiles/GoBang.dir/draw.c.o CMakeFiles/GoBang.dir/search.c.o CMakeFiles/GoBang.dir/evaluation.c.o -o GoBang  /usr/lib/x86_64-linux-gnu/libSDL2.so 

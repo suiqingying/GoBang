@@ -1,4 +1,5 @@
-#include "search.h"
+#include "draw.h"
+#include "judge.h"
 
 #define ALIVE_5 1000000
 #define ALIVE_4 10000
@@ -8,6 +9,10 @@
 #define BLOCK_4 1000
 #define BLOCK_3 100
 #define BLOCK_2 10
+
+typedef struct node{
+    int x, y, color;
+} node;
 
 typedef struct Status {
     int _ALIVE_5;

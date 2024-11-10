@@ -2,14 +2,14 @@
 
 int GetWholeScore(int color)
 {
-    int score = 0;
+    double score = 0;
     for (int i = 0; i < BOARD_SIZE; i++) {
         for (int j = 0; j < BOARD_SIZE; j++) {
             node p = { i, j, board[i][j] };
             if (board[i][j] == color)
-                score += GetSingleScore(p);
+                score += 1.01 * GetSingleScore(p);
             else if (board[i][j] == 3 - color)
-                score -= 2*GetSingleScore(p);
+                score -= GetSingleScore(p);
         }
     }
     return score;

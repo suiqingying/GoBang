@@ -1,8 +1,7 @@
-CMakeFiles/GoBang.dir/evaluation.c.o: \
+CMakeFiles/Gobang.dir/evaluation.c.o: \
  /home/suiqingying/projects/Gobang/evaluation.c \
  /usr/include/stdc-predef.h \
  /home/suiqingying/projects/Gobang/evaluation.h \
- /home/suiqingying/projects/Gobang/search.h \
  /home/suiqingying/projects/Gobang/draw.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
@@ -178,4 +177,6 @@ CMakeFiles/GoBang.dir/evaluation.c.o: \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
+ /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/suiqingying/projects/Gobang/judge.h

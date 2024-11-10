@@ -1,8 +1,9 @@
 #include "draw.h"
 #include "search.h"
+#include "judge.h"
 
 extern int game_mode;
-extern int step, player, mycolor;
+extern int player, mycolor;
 extern bool running;
 
 void TwoPlayerBattle();
@@ -11,4 +12,3 @@ void move();
 void AImove();
 void pause();
 
-bool isWin(int x, int y, int player);
