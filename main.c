@@ -105,7 +105,7 @@ void AImove()
         MinMax(maxDepth, player, alpha, beta);
     }
     board[pos.x][pos.y] = player;
-    printf("%x %x\n", pos.x, pos.y);
+    printf("%x %x\n", pos.x + 'A', 15 - pos.y);
     if (isWin(pos.x, pos.y, player)) {
         printf("You Lost!RUBBISH!\n");
         running = false;

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suiqingying/projects/Gobang
+CMAKE_SOURCE_DIR = /home/suiqingying/projects/my_Gobang
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suiqingying/projects/Gobang/build
+CMAKE_BINARY_DIR = /home/suiqingying/projects/my_Gobang/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles /home/suiqingying/projects/Gobang/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/my_Gobang/build/CMakeFiles /home/suiqingying/projects/my_Gobang/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/Gobang/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suiqingying/projects/my_Gobang/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,30 +177,6 @@ evaluation.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/evaluation.c.s
 .PHONY : evaluation.c.s
 
-judge.o: judge.c.o
-.PHONY : judge.o
-
-# target to build an object file
-judge.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.o
-.PHONY : judge.c.o
-
-judge.i: judge.c.i
-.PHONY : judge.i
-
-# target to preprocess a source file
-judge.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.i
-.PHONY : judge.c.i
-
-judge.s: judge.c.s
-.PHONY : judge.s
-
-# target to generate assembly for a file
-judge.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gobang.dir/build.make CMakeFiles/Gobang.dir/judge.c.s
-.PHONY : judge.c.s
-
 main.o: main.c.o
 .PHONY : main.o
 
@@ -264,9 +240,6 @@ help:
 	@echo "... evaluation.o"
 	@echo "... evaluation.i"
 	@echo "... evaluation.s"
-	@echo "... judge.o"
-	@echo "... judge.i"
-	@echo "... judge.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

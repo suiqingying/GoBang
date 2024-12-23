@@ -1,27 +1,22 @@
 [
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/draw.c.o -c /home/suiqingying/projects/Gobang/draw.c",
-  "file": "/home/suiqingying/projects/Gobang/draw.c"
+  "directory": "/home/suiqingying/projects/my_Gobang/build",
+  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/draw.c.o -c /home/suiqingying/projects/my_Gobang/draw.c",
+  "file": "/home/suiqingying/projects/my_Gobang/draw.c"
 },
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/evaluation.c.o -c /home/suiqingying/projects/Gobang/evaluation.c",
-  "file": "/home/suiqingying/projects/Gobang/evaluation.c"
+  "directory": "/home/suiqingying/projects/my_Gobang/build",
+  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/evaluation.c.o -c /home/suiqingying/projects/my_Gobang/evaluation.c",
+  "file": "/home/suiqingying/projects/my_Gobang/evaluation.c"
 },
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/judge.c.o -c /home/suiqingying/projects/Gobang/judge.c",
-  "file": "/home/suiqingying/projects/Gobang/judge.c"
+  "directory": "/home/suiqingying/projects/my_Gobang/build",
+  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/main.c.o -c /home/suiqingying/projects/my_Gobang/main.c",
+  "file": "/home/suiqingying/projects/my_Gobang/main.c"
 },
 {
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/main.c.o -c /home/suiqingying/projects/Gobang/main.c",
-  "file": "/home/suiqingying/projects/Gobang/main.c"
-},
-{
-  "directory": "/home/suiqingying/projects/Gobang/build",
-  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/search.c.o -c /home/suiqingying/projects/Gobang/search.c",
-  "file": "/home/suiqingying/projects/Gobang/search.c"
+  "directory": "/home/suiqingying/projects/my_Gobang/build",
+  "command": "/usr/bin/cc  -I/usr/include/SDL2 -g -o CMakeFiles/Gobang.dir/search.c.o -c /home/suiqingying/projects/my_Gobang/search.c",
+  "file": "/home/suiqingying/projects/my_Gobang/search.c"
 }
 ]

@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gobang.dir/draw.c.o.d"
   "CMakeFiles/Gobang.dir/evaluation.c.o"
   "CMakeFiles/Gobang.dir/evaluation.c.o.d"
-  "CMakeFiles/Gobang.dir/judge.c.o"
-  "CMakeFiles/Gobang.dir/judge.c.o.d"
   "CMakeFiles/Gobang.dir/main.c.o"
   "CMakeFiles/Gobang.dir/main.c.o.d"
   "CMakeFiles/Gobang.dir/search.c.o"

@@ -2,8 +2,6 @@
 
 node pos;
 
-
-
 int MinMax(int depth, int color, int alpha, int beta)
 {
     if (depth == 0 || isBoardFull()) {

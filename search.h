@@ -18,3 +18,4 @@ extern POINTS P;
 
 int MinMax(int depth, int color, int alpha, int beta);
 POINTS GetPoints(int color);
+

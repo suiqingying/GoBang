@@ -1,30 +1,38 @@
 #include "draw.h"
-#include "judge.h"
 
-#define ALIVE_5 1000000
-#define ALIVE_4 10000
-#define ALIVE_3 1000
-#define ALIVE_2 100
-#define ALIVE_1 10
-#define BLOCK_4 1000
-#define BLOCK_3 100
-#define BLOCK_2 10
+#define Value_Right_5 50000
+#define Value_Living_4 4320
+#define Value_Rush_4 720
+#define Value_Living_3 720
+#define Value_Rush_3 100
+#define Value_Living_2 120
+#define Value_Rush_2 20
 
 typedef struct node{
     int x, y, color;
 } node;
 
 typedef struct Status {
-    int _ALIVE_5;
-    int _ALIVE_4;
-    int _ALIVE_3;
-    int _ALIVE_2;
-    int _ALIVE_1;
-    int _BLOCK_4;
-    int _BLOCK_3;
-    int _BLOCK_2;
+    bool Too_long; //长连（对于黑棋而言）
+    bool Right_5; //合法的5连
+    int Living_4; //合法活四
+    int Rush_4; //合法冲4
+    int Living_3; //合法活3
+    int Rush_3; //合法冲3
+    int Living_2; //合法活2
+    int Rush_2; //合法冲2
 } Status;
 
 int GetWholeScore(int color);
 int GetSingleScore(node p);
-Status GetStatus(node p);
+
+bool judge(int x, int y, int player, int game_mode);
+
+bool isWin(int x, int y, int player);
+bool isInBounds(int x, int y);
+bool isBoardFull();
+
+bool judge_next(int x, int y, int color);
+Status GetStatus(int x, int y, int color);
+int BanMove (int x, int y, Status res);
+int Noban(int x, int y, int direction, int num, int fl);

@@ -10,7 +10,7 @@ pkg_check_modules(SDL2_TTF REQUIRED SDL2_ttf)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
 
 # 添加可执行文件
-add_executable(Gobang draw.c evaluation.c judge.c main.c search.c)
+add_executable(Gobang draw.c evaluation.c main.c search.c)
 
 # 链接 SDL2 和 SDL2_ttf 库
 target_link_libraries(Gobang ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES})
