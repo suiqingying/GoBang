@@ -1,8 +1,8 @@
 CMakeFiles/Gobang.dir/evaluation.c.o: \
- /home/suiqingying/projects/my_Gobang/evaluation.c \
+ /home/suiqingying/projects/GoBang/evaluation.c \
  /usr/include/stdc-predef.h \
- /home/suiqingying/projects/my_Gobang/evaluation.h \
- /home/suiqingying/projects/my_Gobang/draw.h /usr/include/SDL2/SDL.h \
+ /home/suiqingying/projects/GoBang/evaluation.h \
+ /home/suiqingying/projects/GoBang/draw.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \

@@ -8,10 +8,6 @@
 #define Value_Living_2 120
 #define Value_Rush_2 20
 
-typedef struct node{
-    int x, y, color;
-} node;
-
 typedef struct Status {
     bool Too_long; //长连（对于黑棋而言）
     bool Right_5; //合法的5连
@@ -22,6 +18,12 @@ typedef struct Status {
     int Living_2; //合法活2
     int Rush_2; //合法冲2
 } Status;
+
+typedef struct node{
+    int x, y, color;
+    int value[2];
+    int TotalScore;
+} node;
 
 int GetWholeScore(int color);
 int GetSingleScore(node p);
