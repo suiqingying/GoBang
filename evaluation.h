@@ -32,7 +32,7 @@ bool isWin(int x, int y, int player);
 bool isInBounds(int x, int y);
 bool isBoardFull();
 
+extern Status Value_Board[BOARD_SIZE][BOARD_SIZE][2];
 bool judge_next(int x, int y, int color);
-Status GetStatus(int x, int y, int color);
-int BanMove (int x, int y, Status res);
-int Noban(int x, int y, int direction, int num, int fl);
+void GetStatus(int x, int y, int color);
+bool Noban(int x, int y, int direction, int num, int fl);

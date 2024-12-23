@@ -84,10 +84,24 @@ void move()
                     }
                 }
                 if (board[x][y] == 0) {
-                    running = judge(x, y, player, game_mode);
+                    if (player == BLACK){
+                        running = judge(x, y, player, game_mode);
+                        if (!running) {
+                            printf("%c %d is banned\n", x + 'A', 15 - y);
+                            return;
+                        }
+                    }
                     board[x][y] = player;
                     success = true;
                     printf("%c %d\n", x + 'A', 15 - y);
+                    if (isWin(x, y, player)) {
+                        if (player == BLACK) {
+                            printf("Black wins!\n");
+                        } else {
+                            printf("White wins!\n");
+                        }
+                        running = false;
+                    }
                 }
             }
         }
