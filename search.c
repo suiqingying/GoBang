@@ -17,8 +17,8 @@ int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_
     for (int i = 0; i < BOARD_SIZE; i++)
         for (int j = 0; j < BOARD_SIZE; j++)
             if (vis[i][j]) {
-                GetStatus(i, j, BLACK);
                 GetStatus(i, j, WHITE);
+                GetStatus(i, j, BLACK);
 
                 if (color == WHITE || Onlyjudge(i, j)) {
                     if (Value_Board[i][j][color - 1].Right_5) {
@@ -86,6 +86,7 @@ void mergesort(PTR_To_Point s, int l, int r) {
 }
 
 int Find_base_point(int color) {
+    
     PTR_To_Point Points;
     Points = (PTR_To_Point)malloc(sizeof(Point) * 225);
     bool flag_if_win = false;
@@ -114,9 +115,7 @@ int Find_base_point(int color) {
     free(Points);
     return score;
 }
-
 int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXDEPTH) {
-    cnt++;
     if (depth == 0) {
         int value = Find_base_point(color);
         return value;
@@ -131,41 +130,41 @@ int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXD
             pos->x = Bisha.x;
             pos->y = Bisha.y;
         }
-        return MAX_SCORE / 2;
+        return 200000;
     }
     int LENGTH = 12;
-    switch(depth){
-        	case 8:
-            	LENGTH=12;
-            	break;
-        	case 7:
-            	LENGTH=10;
-            	break;
-        	case 6:
-            	LENGTH=10;
-            	break;
-        	case 5:
-            	LENGTH=7;
-            	break;
-        	case 4:
-            	LENGTH=7;
-            	break;
-        	case 3:
-            	LENGTH=7;
-            	break;
-        	case 2:
-            	LENGTH=7;
-            	break;
-        	case 1:
-            	LENGTH=7;
-            	break;
-        	case 0:
-            	LENGTH=14;
-            	break;
-        	default:
-            	printf("error");
-            	break;
-    	} 
+    switch (depth) {
+    case 8:
+        LENGTH = 12;
+        break;
+    case 7:
+        LENGTH = 10;
+        break;
+    case 6:
+        LENGTH = 10;
+        break;
+    case 5:
+        LENGTH = 7;
+        break;
+    case 4:
+        LENGTH = 7;
+        break;
+    case 3:
+        LENGTH = 7;
+        break;
+    case 2:
+        LENGTH = 7;
+        break;
+    case 1:
+        LENGTH = 7;
+        break;
+    case 0:
+        LENGTH = 14;
+        break;
+    default:
+        printf("error");
+        break;
+    }
     if (n < LENGTH) {
         LENGTH = n;
     }

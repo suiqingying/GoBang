@@ -176,9 +176,9 @@ CMakeFiles/Gobang.dir/main.c.o: /home/suiqingying/projects/GoBang/main.c \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/suiqingying/projects/GoBang/search.h \
- /home/suiqingying/projects/GoBang/evaluation.h /usr/include/time.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /home/suiqingying/projects/GoBang/search.h \
+ /home/suiqingying/projects/GoBang/evaluation.h

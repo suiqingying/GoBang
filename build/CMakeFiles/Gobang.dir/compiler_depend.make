@@ -215,7 +215,11 @@ CMakeFiles/Gobang.dir/draw.c.o: ../draw.c \
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
 
 CMakeFiles/Gobang.dir/evaluation.c.o: ../evaluation.c \
   /usr/include/stdc-predef.h \
@@ -432,7 +436,11 @@ CMakeFiles/Gobang.dir/evaluation.c.o: ../evaluation.c \
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
 
 CMakeFiles/Gobang.dir/main.c.o: ../main.c \
   /usr/include/stdc-predef.h \
@@ -650,12 +658,12 @@ CMakeFiles/Gobang.dir/main.c.o: ../main.c \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
-  ../search.h \
-  ../evaluation.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  ../search.h \
+  ../evaluation.h
 
 CMakeFiles/Gobang.dir/search.c.o: ../search.c \
   /usr/include/stdc-predef.h \
@@ -873,14 +881,18 @@ CMakeFiles/Gobang.dir/search.c.o: ../search.c \
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
 
+
+../main.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/time.h:
-
-../main.h:
 
 /usr/include/SDL2/SDL_ttf.h:
 

@@ -1,6 +1,6 @@
 #include "draw.h"
 #include "search.h"
-#include <time.h>
+
 
 extern int game_mode;
 extern int player, mycolor;

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define WINDOW_WIDTH 630
 #define WINDOW_HEIGHT 650

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "search.h": "c",
+        "evaluation.h": "c"
+    }
+}

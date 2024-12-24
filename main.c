@@ -5,9 +5,6 @@ int game_mode; // 1 表示人人对战，2 表示人机对战
 bool running = true;
 
 int main() {
-    // board[3][7] = 2,board[4][6] = 1,board[4][8] = 1,board[5][6] = 2,board[5][7] = 1,board[6][6] = 2,board[6][7] = 1,board[6][8] = 2,board[7][7] = 1,board[8][7] = 2;
-    // printf("黑棋得分：%d\n", GetWholeScore(BLACK));
-    // printf("白棋得分：%d\n", GetWholeScore(WHITE));
     // 添加选择游戏模式的菜单
     printf("请选择游戏模式:\n");
     printf("1. 人人对战\n");
@@ -33,6 +30,8 @@ void HumanVsHuman() {
     while (running) {
         step++;
         move();
+        printf("黑棋得分：%d\n", GetWholeScore(BLACK));
+        printf("白棋得分：%d\n", GetWholeScore(WHITE));
         if (running & isBoardFull()) {
             printf("The game is a draw!\n");
             running = false;
@@ -77,6 +76,8 @@ void AIVsAI() {
     while (running) {
         step++;
         AImove(player);
+        printf("黑棋得分：%d\n", GetWholeScore(BLACK));
+        printf("白棋得分：%d\n", GetWholeScore(WHITE));
         if (running & isBoardFull()) {
             printf("The game is a draw!\n");
             running = false;
@@ -128,6 +129,7 @@ void move() {
 int cnt;
 void AImove() {
     clock_t start = clock();
+    ttt = 0;
     cnt = 0;
     PTR_To_Point pos;
     pos = (PTR_To_Point)malloc(sizeof(Point) * 1);
@@ -140,11 +142,11 @@ void AImove() {
     }  else {
         int DEPTH = 8;
         MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        // if (player == BLACK) {
-        //     int DEPTH = 2;
+        // if (player == WHITE) {
+        //     int DEPTH = 6;
         //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
         // } else {
-        //     int DEPTH = 6;
+        //     int DEPTH = 8;
         //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
         // }
     }

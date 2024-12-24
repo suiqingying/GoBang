@@ -6,11 +6,12 @@ extern int DEPTH;
 #define NEED_VALUE 1
 #define NO_NEED_VALUE 0
 
+
+
 typedef struct{
     int x, y, color;
     int score;
 } Point, *PTR_To_Point;
-extern int cnt;
 
 int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_To_Point Bisha, bool *flag_will_lose, PTR_To_Point Bidang);
 void merge(PTR_To_Point s, int l, int r);
