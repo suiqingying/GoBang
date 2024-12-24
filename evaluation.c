@@ -359,7 +359,7 @@ bool judge_next(int x, int y, int color) {
     for (int i = 0; i < 8; i++) {
         adjoin_same[i] = adjoin_empty[i] = gap_same[i] = gap_empty[i] = gap_gap_same[i] = 0;
     }
-    
+
     for (newX = x + 1, newY = y; newX < BOARD_SIZE && board[newX][newY] == color; newX++, adjoin_same[0]++);
     for (; newX < BOARD_SIZE && board[newX][newY] == 0; newX++, adjoin_empty[0]++);
     for (; newX < BOARD_SIZE && board[newX][newY] == color; newX++, gap_same[0]++);
