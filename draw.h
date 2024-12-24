@@ -24,3 +24,4 @@ void draw_piece(SDL_Renderer *renderer, int x, int y, int player);
 void init();
 void draw();
 void deinit();
+void pause();

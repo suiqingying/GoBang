@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/Gobang.dir/draw.c.o CMakeFiles/Gobang.dir/evaluation.c.o CMakeFiles/Gobang.dir/main.c.o CMakeFiles/Gobang.dir/search.c.o -o Gobang  -lSDL2 -lSDL2_ttf -lSDL2 -lSDL2_ttf 
+/usr/bin/gcc -g CMakeFiles/Gobang.dir/draw.c.o CMakeFiles/Gobang.dir/evaluation.c.o CMakeFiles/Gobang.dir/main.c.o CMakeFiles/Gobang.dir/search.c.o -o Gobang  -lSDL2 -lSDL2_ttf -lSDL2 -lSDL2_ttf 

@@ -1,6 +1,7 @@
 CMakeFiles/Gobang.dir/search.c.o: \
  /home/suiqingying/projects/GoBang/search.c /usr/include/stdc-predef.h \
  /home/suiqingying/projects/GoBang/search.h \
+ /home/suiqingying/projects/GoBang/evaluation.h \
  /home/suiqingying/projects/GoBang/draw.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
@@ -177,5 +178,4 @@ CMakeFiles/Gobang.dir/search.c.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/suiqingying/projects/GoBang/evaluation.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h

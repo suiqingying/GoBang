@@ -2,35 +2,18 @@
 
 Status Value_Board[BOARD_SIZE][BOARD_SIZE][2];
 
-bool judge(int x, int y, int player, int game_mode)
+bool judge(int x, int y, int player)
 {
     if (player == 2)
     {
-        int status = isWin(x, y, player);
-        if (status == 1)
-            printf("White wins!\n");
-        return !status;
+        return true;
     }
     GetStatus(x, y, player);
     Status res = Value_Board[x][y][player - 1];
     // printf("Player %d move: %c %d %d %d %d %d\n", player, x + 'A', 15 - y, res.Living_3, res.Rush_3,res.Rush_4, res.Living_4);
-
     if (res.Right_5)
     {
-        if (game_mode == 1)
-        {
-            if (player == 1)
-            {
-                printf("White wins!\n");
-            }
-            else if (player == 2)
-            {
-                printf("Black wins!\n");
-            }
-        }
-        else
-            printf("You win\n");
-        return false;
+        return true;
     }
     if (res.Too_long || res.Living_3 >= 2 || res.Living_4 + res.Rush_4 >= 2)
     {
@@ -40,13 +23,17 @@ bool judge(int x, int y, int player, int game_mode)
             printf("Double three ban!\n");
         if (res.Living_4 + res.Rush_4 >= 2)
             printf("Double four ban!\n");
-        if (game_mode == 1)
-            printf("White wins!\n");
-        else
-            printf("You Lost!RUBBISH!\n");
         return false;
     }
     return true;
+}
+
+bool Onlyjudge(int x, int y)
+{
+    Status res = Value_Board[x][y][0];
+     if (res.Right_5)
+        return true;
+    return !(res.Too_long || res.Living_3 >= 2 || res.Living_4 + res.Rush_4 >= 2);
 }
 
 bool isInBounds(int x, int y)
@@ -152,7 +139,6 @@ void GetStatus(int x, int y, int color)
         for (; isInBounds(newX, newY) && board[newX][newY] == color; newX -= dx[i], newY -= dy[i], gap_gap_same[i + 4]++)
             ;
     }
-
     for (int i = 0; i < 4; i++)
     {
         bool flag = false;
@@ -226,11 +212,10 @@ void GetStatus(int x, int y, int color)
             {
                 bool flagR_1 = (adjoin_empty[i] > 2 || (adjoin_empty[i] == 2 && gap_same[i] == 0));            // 右边有两个空位且不会形成长连
                 bool flagR_2 = (adjoin_empty[i] == 1 && gap_same[i] == 0);                                     // 右边有恰好一个空位且不会形成长连
-                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] = 1 && gap_same[i + 4] == 0)); // 左边有一个空位且不会形成长连
+                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 0)); // 左边有一个空位且不会形成长连
                 bool flagL_1 = (adjoin_empty[i + 4] > 2 || (adjoin_empty[i + 4] == 2 && gap_same[i + 4] == 0));
                 bool flagL_2 = (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 0);
                 bool flagL_3 = (adjoin_empty[i] > 1 || (adjoin_empty[i] == 1 && gap_same[i] == 0));
-                // printf("%d %d %d %d %d %d %d\n", i, flagR_1, flagR_2, flagR_3, flagL_1,flagL_2, flagL_3);
                 if ((flagR_1 && flagR_3 && Noban(x, y, i, adjoin_same[i] + 1, color)) || (flagL_1 && flagL_3 && Noban(x, y, i + 4, adjoin_same[i + 4] + 1, color)))
                 {
                     res.Living_3 += 1;
@@ -238,7 +223,6 @@ void GetStatus(int x, int y, int color)
                 else if ((((flagR_2 && flagR_3) || (flagR_1 && !flagR_3)) && Noban(x, y, i, adjoin_same[i] + 1, color)) || (((flagL_2 && flagL_3) || (flagL_1 && !flagL_3)) && Noban(x, y, i + 4, adjoin_same[i + 4] + 1, color)))
                 {
                     res.Rush_3 += 1;
-                    puts("1");
                 }
             }
         } // 三连
@@ -269,7 +253,7 @@ void GetStatus(int x, int y, int color)
             {
                 bool flagR_1 = (adjoin_empty[i] == 1 && gap_same[i] == 1);                                     // 一空一同色
                 bool flagR_2 = (gap_empty[i] > 1 || (gap_empty[i] == 1 && gap_gap_same[i] == 0));              // 最右边有至少一个空位且不会形成长连
-                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] = 1 && gap_same[i + 4] == 0)); // 左边有至少一个空位且不会形成长连
+                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 0)); // 左边有至少一个空位且不会形成长连
                 bool flagL_1 = (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 1);
                 bool flagL_2 = (gap_empty[i + 4] > 1 || (gap_empty[i + 4] == 1 && gap_gap_same[i + 4] == 0));
                 bool flagL_3 = (adjoin_empty[i] > 1 || (adjoin_empty[i] == 1 && gap_same[i] == 0));
@@ -362,7 +346,7 @@ bool Noban(int x, int y, int direction, int num, int color)
 {
     // if (board[x][y])
     //     printf("%c %d %d\n", x + 'A', 15 - y, board[x][y]);
-    if (color == 2)
+    if (color == WHITE)
         return 1;
     int fl = 1;
     if (direction >= 4)
@@ -377,9 +361,7 @@ bool Noban(int x, int y, int direction, int num, int color)
     }
     board[x][y] = color;
     int newX = x + fl * dx[direction] * num, newY = y + fl * dy[direction] * num;
-    // printf("%c %d %d %d %c %d\n", x + 'A', 15 - y, direction, num, newX + 'A', 15 - newY);
     bool flag = judge_next(newX, newY, color);
-    // printf("%d\n", flag);
     if (_Empty)
     {
         board[x][y] = 0;
@@ -486,7 +468,7 @@ bool judge_next(int x, int y, int color)
             if (!flag)
             {
                 bool flagR_1 = (adjoin_empty[i] > 2 || (adjoin_empty[i] == 2 && gap_same[i] == 0));            // 右边有两个空位且不会形成长连
-                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] = 1 && gap_same[i + 4] == 0)); // 左边有一个空位且不会形成长连
+                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 0)); // 左边有一个空位且不会形成长连
                 bool flagL_1 = (adjoin_empty[i + 4] > 2 || (adjoin_empty[i + 4] == 2 && gap_same[i + 4] == 0));
                 bool flagL_3 = (adjoin_empty[i] > 1 || (adjoin_empty[i] == 1 && gap_same[i] == 0));
                 if ((flagR_1 && flagR_3 && Noban(x, y, i, adjoin_same[i] + 1, color)) || (flagL_1 && flagL_3 && Noban(x, y, i + 4, adjoin_same[i + 4] + 1, color)))
@@ -522,7 +504,7 @@ bool judge_next(int x, int y, int color)
             {
                 bool flagR_1 = (adjoin_empty[i] == 1 && gap_same[i] == 1);                                     // 一空一同色
                 bool flagR_2 = (gap_empty[i] > 1 || (gap_empty[i] == 1 && gap_gap_same[i] == 0));              // 最右边有至少一个空位且不会形成长连
-                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] = 1 && gap_same[i + 4] == 0)); // 左边有至少一个空位且不会形成长连
+                bool flagR_3 = (adjoin_empty[i + 4] > 1 || (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 0)); // 左边有至少一个空位且不会形成长连
                 bool flagL_1 = (adjoin_empty[i + 4] == 1 && gap_same[i + 4] == 1);
                 bool flagL_2 = (gap_empty[i + 4] > 1 || (gap_empty[i + 4] == 1 && gap_gap_same[i + 4] == 0));
                 bool flagL_3 = (adjoin_empty[i] > 1 || (adjoin_empty[i] == 1 && gap_same[i] == 0));
@@ -573,39 +555,91 @@ bool judge_next(int x, int y, int color)
 }
 
 int value[BOARD_SIZE][BOARD_SIZE][2], TotalValue[BOARD_SIZE][BOARD_SIZE];
-void GetSingleScore(node p)
+void GetSingleScore(int x, int y, int color)
 {
-    GetStatus(p.x, p.y, p.color);
-    GetStatus(p.x, p.y, 3 - p.color);
     for (int i = 0; i < 2; i++)
     {
-        Status nowStatus = Value_Board[p.x][p.y][i];
+        Status nowStatus = Value_Board[x][y][i];
         int score = 0;
-        score += nowStatus.Living_2 * Value_Rush_2;
-        score += nowStatus.Living_3 * Value_Rush_3;
-        score += nowStatus.Living_4 * Value_Rush_4;
-        score += nowStatus.Rush_2 * Value_Living_2;
-        score += nowStatus.Rush_3 * Value_Living_3;
-        score += nowStatus.Rush_4 * Value_Living_4;
         score += nowStatus.Right_5 * Value_Right_5;
-        value[p.x][p.y][i] = score;
+        score += nowStatus.Living_4 * Value_Living_4;
+        score += nowStatus.Rush_4 * Value_Rush_4;
+        score += nowStatus.Living_3 * Value_Living_3;
+        score += nowStatus.Rush_3 * Value_Rush_3;
+        score += nowStatus.Living_2 * Value_Living_2;
+        score += nowStatus.Rush_2 * Value_Rush_2;
+        value[x][y][i] = score;
     }
-    TotalValue[p.x][p.y] = value[p.x][p.y][0] + value[p.x][p.y][1];
+    TotalValue[x][y] = value[x][y][0] + value[x][y][1];
 }
 
 int GetWholeScore(int color)
 {
-    double score = 0;
+    int Right_5[2] = {0, 0};
+    int Living_4[2] = {0, 0};
+    int Rush_4[2] = {0, 0};
+    int Living_3[2] = {0, 0};
+    int Rush_3[2] = {0, 0};
+    int Living_2[2] = {0, 0};
+    int Rush_2[2] = {0, 0};
     for (int i = 0; i < BOARD_SIZE; i++)
     {
         for (int j = 0; j < BOARD_SIZE; j++)
         {
-            node p = {i, j, board[i][j]};
-            if (board[i][j] == color)
-                score += 1.01 * GetSingleScore(p);
-            else if (board[i][j] == 3 - color)
-                score -= GetSingleScore(p);
+            if (board[i][j] == BLACK)
+            {
+                GetStatus(i, j, BLACK);
+                Living_4[0] += Value_Board[i][j][0].Living_4;
+                Rush_4[0] += Value_Board[i][j][0].Rush_4;
+                Living_3[0] += Value_Board[i][j][0].Living_3;
+                Rush_3[0] += Value_Board[i][j][0].Rush_3;
+                Living_2[0] += Value_Board[i][j][0].Living_2;
+                Rush_2[0] += Value_Board[i][j][0].Rush_2;
+            }
+            if (board[i][j] == WHITE)
+            {
+                GetStatus(i, j, WHITE);
+                Living_4[1] += Value_Board[i][j][1].Living_4;
+                Rush_4[1] += Value_Board[i][j][1].Rush_4;
+                Living_3[1] += Value_Board[i][j][1].Living_3;
+                Rush_3[1] += Value_Board[i][j][1].Rush_3;
+                Living_2[1] += Value_Board[i][j][1].Living_2;
+                Rush_2[1] += Value_Board[i][j][1].Rush_2;
+            }
         }
     }
-    return score;
+    int value = 0;
+    if (color == BLACK)
+    {
+        value += Living_4[0] * Sef_Value_Living_4 / 4;
+        value += Rush_4[0] * Sef_Value_Rush_4 / 4;
+        value += Living_3[0] * Sef_Value_Living_3 / 3;
+        value += Rush_3[0] * Sef_Value_Rush_3 / 3;
+        value += Living_2[0] * Sef_Value_Living_2 / 2;
+        value += Rush_2[0] * Sef_Value_Rush_2 / 2;
+
+        value -= Living_4[1] * Rival_Value_Rush_4 / 4;
+        value -= Rush_4[1] * Rival_Value_Rush_4 / 4;
+        value -= Living_3[1] * Rival_Value_Living_3 / 3;
+        value -= Rush_3[1] * Rival_Value_Rush_3 / 3;
+        value -= Living_2[1] * Rival_Value_Living_2 / 2;
+        value -= Rush_2[1] * Rival_Value_Rush_2 / 2;
+    }
+    else
+    {
+        value += Living_4[1] * Sef_Value_Living_4 / 4;
+        value += Rush_4[1] * Sef_Value_Rush_4 / 4;
+        value += Living_3[1] * Sef_Value_Living_3 / 3;
+        value += Rush_3[1] * Sef_Value_Rush_3 / 3;
+        value += Living_2[1] * Sef_Value_Living_2 / 2;
+        value += Rush_2[1] * Sef_Value_Rush_2 / 2;
+
+        value -= Living_4[0] * Rival_Value_Rush_4 / 4;
+        value -= Rush_4[0] * Rival_Value_Rush_4 / 4;
+        value -= Living_3[0] * Rival_Value_Living_3 / 3;
+        value -= Rush_3[0] * Rival_Value_Rush_3 / 3;
+        value -= Living_2[0] * Rival_Value_Living_2 / 2;
+        value -= Rush_2[0] * Rival_Value_Rush_2 / 2;
+    }
+    return value;
 }

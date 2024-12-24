@@ -4,17 +4,22 @@ int step, player = 1, mycolor;
 int game_mode; // 1 表示人人对战，2 表示人机对战
 bool running = true;
 
-int main()
-{
+int main() {
+    // board[3][7] = 2,board[4][6] = 1,board[4][8] = 1,board[5][6] = 2,board[5][7] = 1,board[6][6] = 2,board[6][7] = 1,board[6][8] = 2,board[7][7] = 1,board[8][7] = 2;
+    // printf("黑棋得分：%d\n", GetWholeScore(BLACK));
+    // printf("白棋得分：%d\n", GetWholeScore(WHITE));
     // 添加选择游戏模式的菜单
     printf("请选择游戏模式:\n");
     printf("1. 人人对战\n");
     printf("2. 人机对战\n");
+    printf("3. ai模拟\n");
     scanf("%d", &game_mode);
     if (game_mode == 1) {
-        TwoPlayerBattle();
+        HumanVsHuman();
     } else if (game_mode == 2) {
         HumanVsAI();
+    } else if (game_mode == 3) {
+        AIVsAI();
     } else {
         printf("无效的选择！\n");
     }
@@ -22,8 +27,7 @@ int main()
     return 0;
 }
 
-void TwoPlayerBattle()
-{
+void HumanVsHuman() {
     init();
     draw();
     while (running) {
@@ -38,8 +42,7 @@ void TwoPlayerBattle()
     pause();
 }
 
-void HumanVsAI()
-{
+void HumanVsAI() {
     printf("请玩家选择执棋颜色：\n");
     printf("1. 黑棋\n");
     printf("2. 白棋\n");
@@ -55,8 +58,10 @@ void HumanVsAI()
         if (player == mycolor) {
             move();
         } else {
-            AImove();
+            AImove(player);
         }
+        printf("黑棋得分：%d\n", GetWholeScore(BLACK));
+        printf("白棋得分：%d\n", GetWholeScore(WHITE));
         if (running & isBoardFull()) {
             printf("The game is a draw!\n");
             running = false;
@@ -66,8 +71,21 @@ void HumanVsAI()
     pause();
 }
 
-void move()
-{
+void AIVsAI() {
+    init();
+    draw();
+    while (running) {
+        step++;
+        AImove(player);
+        if (running & isBoardFull()) {
+            printf("The game is a draw!\n");
+            running = false;
+        }
+        player = 3 - player; // 切换玩家
+    }
+    pause();
+}
+void move() {
     SDL_Event e;
     bool success = false;
     while (!success) {
@@ -77,19 +95,18 @@ void move()
             } else if (e.type == SDL_MOUSEBUTTONDOWN) {
                 int x = e.button.x / GRID_SIZE;
                 int y = e.button.y / GRID_SIZE;
-                if(step == 1) {
-                    if (x !=7 || y != 7) {
+                if (step == 1) {
+                    if (x != 7 || y != 7) {
                         printf("Please place your stone at the H8.\n");
                         continue;
                     }
                 }
                 if (board[x][y] == 0) {
-                    if (player == BLACK){
-                        running = judge(x, y, player, game_mode);
-                        if (!running) {
-                            printf("%c %d is banned\n", x + 'A', 15 - y);
-                            return;
-                        }
+                    bool flag = judge(x, y, player);
+                    if (!flag) {
+                        running = false;
+                        printf("%c %d is banned\n", x + 'A', 15 - y);
+                        return;
                     }
                     board[x][y] = player;
                     success = true;
@@ -108,31 +125,42 @@ void move()
     }
     draw();
 }
-
-void AImove()
-{
-    int alpha = -MAX_SCORE, beta = MAX_SCORE;
+int cnt;
+void AImove() {
+    clock_t start = clock();
+    cnt = 0;
+    PTR_To_Point pos;
+    pos = (PTR_To_Point)malloc(sizeof(Point) * 1);
     if (step == 1) {
-        pos.x = 7;
-        pos.y = 7;
-    } else {
-        MinMax(maxDepth, player, alpha, beta);
+        pos->x = 7;
+        pos->y = 7;
+    } else if (step == 2) {
+        pos->x = 8;
+        pos->y = 8;
+    }  else {
+        int DEPTH = 8;
+        MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // if (player == BLACK) {
+        //     int DEPTH = 2;
+        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // } else {
+        //     int DEPTH = 6;
+        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // }
     }
-    board[pos.x][pos.y] = player;
-    printf("%x %x\n", pos.x + 'A', 15 - pos.y);
-    if (isWin(pos.x, pos.y, player)) {
-        printf("You Lost!RUBBISH!\n");
+    printf("%c %d\n", pos->x + 'A', 15 - pos->y);
+    board[pos->x][pos->y] = player;
+    if (isWin(pos->x, pos->y, player)) {
+        if (player == BLACK) {
+            printf("Black wins!\n");
+        } else {
+            printf("White wins!\n");
+        }
         running = false;
     }
+    printf("cnt = %d\n", cnt);
+    free(pos);
     draw();
+    clock_t end = clock();
+    printf("use time %f seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
 }
-
-void pause()
-{
-    printf("Press Enter key to continue...");
-    while (getchar() != '\n') {
-        ;
-    }
-    getchar();
-}
-

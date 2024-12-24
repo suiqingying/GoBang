@@ -1,110 +1,191 @@
 #include "search.h"
 
-node pos;
-
-int MinMax(int depth, int color, int alpha, int beta)
-{
-    if (depth == 0 || isBoardFull()) {
-        return GetWholeScore(color);
-    }
-    // POINTS P = GetPoints(color);
-    // for (int k = 0; k < MAXLENGTH; k++)
-    // {
-    //     printf("(%d %d) ", P.pos[k].x, P.pos[k].y);
-    // }
-    // printf("\n");
-    
-    // for (int k = 0; k < MAXLENGTH; k++) {
-    //     if(P.pos[k].x==-1) break;
-    //     board[P.pos[k].x][P.pos[k].y] = color;
-    //     int score = -MinMax(depth - 1, 3 - color, -beta, -alpha);
-    //     board[P.pos[k].x][P.pos[k].y] = 0;
-    //     if (score > alpha) {
-    //         alpha = score;
-    //         if (depth == maxDepth) {
-    //             pos.x = P.pos[k].x;
-    //             pos.y = P.pos[k].y;
-    //         }
-    //     }
-    //     if (alpha >= beta) {
-    //         return alpha;
-    //     }
-    // }
-    for (int i = 0; i < BOARD_SIZE; i++) {
-        for (int j = 0; j < BOARD_SIZE; j++) {
-            if (board[i][j] == 0) {
-                board[i][j] = color;
-                int score = -MinMax(depth - 1, 3 - color, -beta, -alpha);
-                board[i][j] = 0;
-                if (score > alpha) {
-                    alpha = score;
-                    if (depth == maxDepth) {
-                        pos.x = i;
-                        pos.y = j;
-                    }
-                }
-                if (alpha >= beta) {
-                    return alpha;
-                }
-            }
-        }
-    }
-    return alpha;
-}
-
-POINTS GetPoints(int color)
-{
+int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_To_Point Bisha, bool *flag_will_lose, PTR_To_Point Bidang) {
+    int index = 0;
     bool vis[BOARD_SIZE][BOARD_SIZE];
     memset(vis, 0, sizeof(vis));
-    POINTS P;
-    int val[BOARD_SIZE][BOARD_SIZE];
-    memset(val, 0, sizeof(val));
-    for (int i = 0; i < MAXLENGTH; i++) {
-        P.pos[i].x = -1;
-        P.pos[i].y = -1;
-    }
-    for (int i = 0; i < BOARD_SIZE; i++) {
-        for (int j = 0; j < BOARD_SIZE; j++) {
-            if (board[i][j] == 0) {
-                continue;
-            }
-            for (int k = -3; k <= 3; k++) {
-                for (int l = 0; l < 4; l++) {
-                    if (isInBounds(i + k * dx[l], j + k * dy[l])) {
-                        vis[i + k * dx[l]][j + k * dy[l]] = 1;
+    for (int i = 0; i < BOARD_SIZE; i++)
+        for (int j = 0; j < BOARD_SIZE; j++)
+            if (board[i][j]) {
+                for (int x = i - 1; x <= i + 1; x++)
+                    for (int y = j - 1; y <= j + 1; y++) {
+                        if (isInBounds(x, y) && board[x][y] == 0) {
+                            vis[x][y] = true;
+                        }
                     }
+            }
+    for (int i = 0; i < BOARD_SIZE; i++)
+        for (int j = 0; j < BOARD_SIZE; j++)
+            if (vis[i][j]) {
+                GetStatus(i, j, BLACK);
+                GetStatus(i, j, WHITE);
+
+                if (color == WHITE || Onlyjudge(i, j)) {
+                    if (Value_Board[i][j][color - 1].Right_5) {
+                        Bisha->x = i;
+                        Bisha->y = j;
+                        *flag_if_win = true;
+                        return ++index;
+                    }
+                    int ag_color = 3 - color;
+                    if ((ag_color == WHITE || Onlyjudge(i, j)) && Value_Board[i][j][ag_color - 1].Right_5) {
+                        Bidang->x = i;
+                        Bidang->y = j;
+                        *flag_will_lose = true;
+                    }
+                    Points[index].x = i;
+                    Points[index].y = j;
+                    if (flag) {
+                        GetSingleScore(i, j, color);
+                        Points[index].score = TotalValue[i][j];
+                    }
+                    index++;
                 }
             }
+    return index;
+}
+
+Point b[225];
+
+void merge(PTR_To_Point s, int l, int r) {
+    if (l >= r) {
+        return;
+    }
+    int mid = (l + r) >> 1;
+    int i = l, j = mid + 1, tot = l;
+    while (i <= mid && j <= r) {
+        if (s[i].score >= s[j].score) {
+            b[tot++] = s[i];
+            i++;
+        } else {
+            b[tot++] = s[j];
+            j++;
         }
     }
-    if (step == 1) {
-        P.pos[0].x = 7;
-        P.pos[0].y = 7;
-        return P;
+    while (i <= mid) {
+        b[tot++] = s[i];
+        i++;
     }
-    for (int i = 0; i < BOARD_SIZE; i++) {
-        for (int j = 0; j < BOARD_SIZE; j++) {
-            val[i][j] = -MAX_SCORE;
-            if (!vis[i][j] || board[i][j] != 0) continue;
-            board[i][j] = color;
-            val[i][j] = GetWholeScore(color);
-            // board[i][j] = 3 - color;
-            // val[i][j] += GetWholeScore(3-color);
-            board[i][j] = 0;
+    while (j <= r) {
+        b[tot++] = s[j];
+        j++;
+    }
+    for (int i = l; i <= r; i++) {
+        s[i] = b[i];
+    }
+    return;
+}
+
+void mergesort(PTR_To_Point s, int l, int r) {
+    if (l >= r)
+        return;
+    int mid = (l + r) >> 1;
+    mergesort(s, l, mid);
+    mergesort(s, mid + 1, r);
+    merge(s, l, r);
+}
+
+int Find_base_point(int color) {
+    PTR_To_Point Points;
+    Points = (PTR_To_Point)malloc(sizeof(Point) * 225);
+    bool flag_if_win = false;
+    bool flag_will_lose = false;
+    Point Bisha, Bidang;
+    int n = GetPoints(Points, color, NO_NEED_VALUE, &flag_if_win, &Bisha, &flag_will_lose, &Bidang);
+    if (flag_if_win) {
+        return MAX_SCORE / 2;
+    }
+    if (flag_will_lose) {
+        board[Bidang.x][Bidang.y] = color;
+        int score = GetWholeScore(color);
+        board[Bidang.x][Bidang.y] = 0;
+        return score;
+    }
+    int i;
+    int score = -MAX_SCORE;
+    for (i = 0; i < n; i++) {
+        board[Points[i].x][Points[i].y] = color;
+        int tmp = GetWholeScore(color);
+        board[Points[i].x][Points[i].y] = 0;
+        if (tmp > score) {
+            score = tmp;
         }
     }
-    for (int k = 0; k < MAXLENGTH; k++) {
-        int max_score = -MAX_SCORE;
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
-                if (val[i][j] > max_score) {
-                    max_score = val[j][k];
-                    P.pos[k].x = i;
-                    P.pos[k].y = j;
-                }
+    free(Points);
+    return score;
+}
+
+int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXDEPTH) {
+    cnt++;
+    if (depth == 0) {
+        int value = Find_base_point(color);
+        return value;
+    }
+    PTR_To_Point Points = (PTR_To_Point)malloc(sizeof(Point) * 225);
+    bool flag_if_win = false;
+    bool flag_will_lose = false;
+    Point Bisha, Bidang;
+    int n = GetPoints(Points, color, NEED_VALUE, &flag_if_win, &Bisha, &flag_will_lose, &Bidang);
+    if (flag_if_win) {
+        if (depth == MAXDEPTH) {
+            pos->x = Bisha.x;
+            pos->y = Bisha.y;
+        }
+        return MAX_SCORE / 2;
+    }
+    int LENGTH = 12;
+    switch(depth){
+        	case 8:
+            	LENGTH=12;
+            	break;
+        	case 7:
+            	LENGTH=10;
+            	break;
+        	case 6:
+            	LENGTH=10;
+            	break;
+        	case 5:
+            	LENGTH=7;
+            	break;
+        	case 4:
+            	LENGTH=7;
+            	break;
+        	case 3:
+            	LENGTH=7;
+            	break;
+        	case 2:
+            	LENGTH=7;
+            	break;
+        	case 1:
+            	LENGTH=7;
+            	break;
+        	case 0:
+            	LENGTH=14;
+            	break;
+        	default:
+            	printf("error");
+            	break;
+    	} 
+    if (n < LENGTH) {
+        LENGTH = n;
+    }
+    mergesort(Points, 0, n - 1);
+    for (int i = 0; i < LENGTH; i++) {
+        board[Points[i].x][Points[i].y] = color;
+        int score = -MinMax(3 - color, pos, depth - 1, -beta, -alpha, MAXDEPTH);
+        board[Points[i].x][Points[i].y] = 0;
+        if (score > alpha) {
+            alpha = score;
+            if (depth == MAXDEPTH) {
+                pos->x = Points[i].x;
+                pos->y = Points[i].y;
             }
         }
-        val[P.pos[k].x][P.pos[k].y] = -MAX_SCORE;
+        if (alpha >= beta) {
+            free(Points);
+            return alpha;
+        }
     }
-    return P;
+    free(Points);
+    return alpha;
 }

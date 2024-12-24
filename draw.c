@@ -170,3 +170,13 @@ void deinit()
     TTF_Quit();
     SDL_Quit();
 }
+
+void pause()
+{
+    printf("Press Enter key to continue...");
+    while (getchar() != '\n')
+    {
+        ;
+    }
+    getchar();
+}

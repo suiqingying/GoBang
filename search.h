@@ -1,21 +1,20 @@
-#include "draw.h"
 #include "evaluation.h"
 
-#define maxDepth 2
-#define MAX_SCORE 50000000
-#define MAXLENGTH 15
+extern int DEPTH;
+#define MAX_SCORE 10000000
 
+#define NEED_VALUE 1
+#define NO_NEED_VALUE 0
 
-typedef struct POINTS {
-    node pos[MAXLENGTH];
-} POINTS;
+typedef struct{
+    int x, y, color;
+    int score;
+} Point, *PTR_To_Point;
+extern int cnt;
 
-extern int step;
-extern int alpha, beta;
-extern node pos;
-extern POINTS P;
-
-
-int MinMax(int depth, int color, int alpha, int beta);
-POINTS GetPoints(int color);
+int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_To_Point Bisha, bool *flag_will_lose, PTR_To_Point Bidang);
+void merge(PTR_To_Point s, int l, int r);
+void mergesort(PTR_To_Point s, int l, int r);
+int Find_base_point(int color);
+int MinMax(int color, PTR_To_Point pos, int depth, int a, int b, int MAXDEPTH);
 
