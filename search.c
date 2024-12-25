@@ -126,7 +126,7 @@ int Find_base_point(int color)
         return score;
     }
     int i;
-    int score = -MAX_SCORE;
+    int score = -MAX_SCORE / 2;
     for (i = 0; i < n; i++)
     {
         board[Points[i].x][Points[i].y] = color;
@@ -140,9 +140,10 @@ int Find_base_point(int color)
     free(Points);
     return score;
 }
+
 int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXDEPTH)
 {
-    if (depth == 0)
+    if (depth == 0 || tot + 1 == BOARD_SIZE * BOARD_SIZE)
     {
         int value = Find_base_point(color);
         return value;
@@ -203,7 +204,9 @@ int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXD
     for (int i = 0; i < LENGTH; i++)
     {
         board[Points[i].x][Points[i].y] = color;
+        tot++;
         int score = -MinMax(3 - color, pos, depth - 1, -beta, -alpha, MAXDEPTH);
+        tot--;
         board[Points[i].x][Points[i].y] = 0;
         if (score > alpha)
         {

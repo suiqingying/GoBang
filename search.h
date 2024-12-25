@@ -1,6 +1,7 @@
 #include "evaluation.h"
 
 extern int DEPTH;
+
 #define MAX_SCORE 10000000
 
 #define NEED_VALUE 1

@@ -11,6 +11,7 @@
 #define BOARD_SIZE 15
 #define BLACK 1
 #define WHITE 2
+extern int tot;
 
 extern int board[BOARD_SIZE][BOARD_SIZE];
 

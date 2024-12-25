@@ -35,14 +35,7 @@ bool isInBounds(int x, int y) {
 }
 
 bool isBoardFull() {
-    for (int i = 0; i < BOARD_SIZE; i++) {
-        for (int j = 0; j < BOARD_SIZE; j++) {
-            if (board[i][j] == 0) {
-                return false;
-            }
-        }
-    }
-    return true;
+    return tot == BOARD_SIZE * BOARD_SIZE;
 }
 
 bool isWin(int x, int y, int player) {
@@ -322,6 +315,7 @@ void GetStatus(int x, int y, int color) {
 }
 
 bool Noban(int x, int y, int direction, int num, int color) {
+    // return 1;
     // if (board[x][y])
     //     printf("%c %d %d\n", x + 'A', 15 - y, board[x][y]);
     if (color == WHITE)
