@@ -126,11 +126,9 @@ void move() {
     }
     draw();
 }
-int cnt;
+
 void AImove() {
     clock_t start = clock();
-    ttt = 0;
-    cnt = 0;
     PTR_To_Point pos;
     pos = (PTR_To_Point)malloc(sizeof(Point) * 1);
     if (step == 1) {
@@ -140,15 +138,15 @@ void AImove() {
         pos->x = 8;
         pos->y = 8;
     }  else {
-        int DEPTH = 8;
-        MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        // if (player == WHITE) {
-        //     int DEPTH = 6;
-        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        // } else {
-        //     int DEPTH = 8;
-        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        // }
+        // int DEPTH = 6;
+        // MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        if (player == WHITE) {
+            int DEPTH = 6;
+            MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        } else {
+            int DEPTH = 8;
+            MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        }
     }
     printf("%c %d\n", pos->x + 'A', 15 - pos->y);
     board[pos->x][pos->y] = player;
@@ -160,7 +158,7 @@ void AImove() {
         }
         running = false;
     }
-    printf("cnt = %d\n", cnt);
+
     free(pos);
     draw();
     clock_t end = clock();

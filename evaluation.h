@@ -31,8 +31,6 @@ typedef struct Status {
     int Living_2; //合法活2
     int Rush_2; //合法冲2
 } Status;
-extern double ttt;
-extern int cnt;
 
 void GetSingleScore(int x, int y, int color);
 int GetWholeScore(int color);

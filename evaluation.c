@@ -1,5 +1,4 @@
 #include "evaluation.h"
-double ttt = 0;
 Status Value_Board[BOARD_SIZE][BOARD_SIZE][2];
 
 bool judge(int x, int y, int player) {
@@ -539,10 +538,6 @@ bool judge_next(int x, int y, int color) {
 int value[BOARD_SIZE][BOARD_SIZE][2], TotalValue[BOARD_SIZE][BOARD_SIZE];
 void GetSingleScore(int x, int y, int color) {
     for (int i = 0; i < 2; i++) {
-        if (i == 0 && !Onlyjudge(x, y)) {
-            value[x][y][i] = -200000;
-            continue;
-        }
         Status nowStatus = Value_Board[x][y][i];
         int score = 0;
         score += nowStatus.Right_5 * Value_Right_5;
