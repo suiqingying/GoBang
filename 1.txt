@@ -1,145 +1,69 @@
+第 2 手下在 F 10
+黑棋得分：0
+白棋得分：0
+x = E, y = 11, score = 120
+x = E, y = 10, score = 120
+x = E, y = 9, score = 120
+x = F, y = 11, score = 120
+x = F, y = 9, score = 120
+x = G, y = 11, score = 120
+x = G, y = 10, score = 120
+x = G, y = 8, score = 120
+x = G, y = 7, score = 120
+x = H, y = 9, score = 120
+x = H, y = 7, score = 120
+x = I, y = 9, score = 120
+x = I, y = 8, score = 120
+x = I, y = 7, score = 120
+x = G, y = 9, score = 40
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+value = 380
+value = 0
+value = 380
+value = 0
+value = 0
+value = 0
+value = 0
+value = 380
+16
+第 3 手下在 G 7
 
-第 1 手下在 H 8
-use time 0.020859 seconds
+请输入欲落白子子坐标(字母,数字):f,10
 黑棋得分：0
 白棋得分：0
-第 2 手下在 I 7
-use time 0.020142 seconds
-黑棋得分：0
-白棋得分：0
-第 3 手下在 H 6
-use time 1.075956 seconds
-黑棋得分：480
-白棋得分：-480
-第 4 手下在 I 9
-use time 0.673330 seconds
-黑棋得分：0
-白棋得分：0
-第 5 手下在 I 6
-use time 0.683974 seconds
-黑棋得分：910
-白棋得分：-950
-第 6 手下在 H 7
-use time 0.428896 seconds
-黑棋得分：-50
-白棋得分：10
-第 7 手下在 G 6
-use time 0.388283 seconds
-黑棋得分：190
-白棋得分：-49510
-第 8 手下在 J 6
-use time 0.263378 seconds
-黑棋得分：-150
-白棋得分：-210
-第 9 手下在 F 6
-use time 0.724645 seconds
-黑棋得分：100
-白棋得分：-999540
-第 10 手下在 E 6
-use time 0.258692 seconds
-黑棋得分：-620
-白棋得分：460
-第 11 手下在 G 7
-use time 0.826677 seconds
-黑棋得分：1190
-白棋得分：-1630
-第 12 手下在 J 7
-use time 1.535816 seconds
-黑棋得分：90
-白棋得分：-690
-第 13 手下在 G 5
-use time 1.225752 seconds
-黑棋得分：830
-白棋得分：-50790
-第 14 手下在 G 8
-use time 0.466812 seconds
-黑棋得分：10
-白棋得分：-1010
-第 15 手下在 E 5
-use time 0.977332 seconds
-黑棋得分：730
-白棋得分：-1000770
-第 16 手下在 D 4
-use time 0.479942 seconds
-黑棋得分：10
-白棋得分：-770
-第 17 手下在 F 5
-use time 0.757585 seconds
-黑棋得分：750
-白棋得分：-50870
-第 18 手下在 H 5
-use time 0.370783 seconds
-黑棋得分：510
-白棋得分：-1590
-第 19 手下在 F 4
-use time 0.546770 seconds
-黑棋得分：1690
-白棋得分：-52210
-第 20 手下在 K 7
-use time 0.139128 seconds
-黑棋得分：-998550
-白棋得分：-51010
-第 21 手下在 L 7
-use time 0.056444 seconds
-黑棋得分：1450
-白棋得分：-51730
-第 22 手下在 F 7
-use time 0.198195 seconds
-黑棋得分：-48310
-白棋得分：-2210
-第 23 手下在 D 5
-use time 0.171220 seconds
-黑棋得分：1210
-白棋得分：-1001730
-第 24 手下在 C 5
-use time 0.385893 seconds
-黑棋得分：10
-白棋得分：-1250
-第 25 手下在 H 4
-use time 0.520249 seconds
-黑棋得分：730
-白棋得分：-51250
-第 26 手下在 I 10
-use time 0.591169 seconds
-黑棋得分：-999220
-白棋得分：-50540
-第 27 手下在 H 9
-use time 0.159307 seconds
-黑棋得分：800
-白棋得分：-51360
-第 28 手下在 I 8
-use time 0.839393 seconds
-黑棋得分：-998680
-白棋得分：-51080
-第 29 手下在 I 11
-use time 0.155606 seconds
-黑棋得分：1320
-白棋得分：-51800
-第 30 手下在 E 7
-use time 0.762704 seconds
-黑棋得分：400
-白棋得分：-2000
-第 31 手下在 F 8
-use time 0.770245 seconds
-黑棋得分：1070
-白棋得分：-51990
-第 32 手下在 I 5
-use time 0.863331 seconds
-黑棋得分：490
-白棋得分：-2690
-第 33 手下在 G 4
-use time 0.851721 seconds
-黑棋得分：990
-白棋得分：-1051590
-第 34 手下在 G 3
-use time 0.544970 seconds
-黑棋得分：-190
-白棋得分：-51210
-第 35 手下在 I 4
-use time 0.842362 seconds
-黑棋得分：99090
-白棋得分：-1001210
-第 36 手下在 J 4
-use time 0.020708 seconds
-黑棋得分：-49810
-白棋得分：-1000950
+轮到黑棋下第3手棋：
+hang = I, lie = 7, score = 120
+hang = I, lie = 8, score = 120
+hang = I, lie = 9, score = 120
+hang = H, lie = 7, score = 120
+hang = H, lie = 9, score = 120
+hang = G, lie = 7, score = 120
+hang = G, lie = 8, score = 120
+hang = E, lie = 11, score = 120
+hang = G, lie = 10, score = 120
+hang = G, lie = 11, score = 120
+hang = F, lie = 9, score = 120
+hang = F, lie = 11, score = 120
+hang = E, lie = 9, score = 120
+hang = E, lie = 10, score = 120
+value = 0
+value = 0
+value = 0
+value = 0
+value = 380
+value = 0
+value = 380
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+value = 480
+15

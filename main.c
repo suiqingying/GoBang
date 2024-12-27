@@ -146,7 +146,7 @@ void move()
                     board[x][y] = player;
                     tot++;
                     success = true;
-                    printf("第 %d 手下在, %c %d\n", step, x + 'A', 15 - y);
+                    printf("第 %d 手下在 %c %d\n", step, x + 'A', 15 - y);
                     if (isWin(x, y, player))
                     {
                         if (player == BLACK)
@@ -165,23 +165,287 @@ void move()
     }
     draw();
 }
-
+int cnt;
+void get(PTR_To_Point pos, int x, int y)
+{
+    pos->x = x;
+    pos->y = y;
+}
 void AImove()
 {
     clock_t start = clock();
     PTR_To_Point pos;
     pos = (PTR_To_Point)malloc(sizeof(Point));
+    pos->x = -1;
+    pos->y = -1;
     if (step == 1)
     {
-        pos->x = 7;
-        pos->y = 7;
+        get(pos,7,7);
     }
-    else if (step == 2)
+    if (step == 2)
     {
-        pos->x = 8;
-        pos->y = 8;
+        get(pos, 8,8);
     }
-    else if (step == 225)
+    if (step == 3)
+    {
+        
+        if (board[8][8] == WHITE || board[8][6] == WHITE)
+        {
+            get(pos, 6, 7);
+        }
+        
+        if (board[6][6] == WHITE || board[6][8] == WHITE)
+        {
+            get(pos, 8, 7);
+        }
+        
+        if (board[8][7] == WHITE || board[7][6] == WHITE)
+        {
+            get(pos, 8, 6);
+        }
+       
+        if (board[6][7] == WHITE || board[7][8] == WHITE)
+        {
+            get(pos, 6, 8);
+        }
+    }
+    if (step == 5)
+    {
+        
+        if (board[8][8] == WHITE && board[8][7] == WHITE)
+        {
+            get(pos, 8, 6);
+        }
+        if (board[8][8] == WHITE && board[5][7] == WHITE)
+        {
+            get(pos, 6, 8);
+        }
+        if (board[8][8] == WHITE && board[7][9] == WHITE)
+        {
+            get(pos, 7, 6);
+        }
+        if (board[8][8] == WHITE && board[8][6] == WHITE)
+        {
+            get(pos, 8, 7);
+        }
+        if (board[8][8] == WHITE && board[9][7] == WHITE)
+        {
+            get(pos, 7, 9);
+        }
+        // 第二步白棋下左下
+        if (board[8][6] == WHITE && board[8][7] == WHITE)
+        {
+            get(pos, 8, 8);
+        }
+        if (board[8][6] == WHITE && board[5][7] == WHITE)
+        {
+            get(pos, 6, 6);
+        }
+        if (board[8][6] == WHITE && board[7][5] == WHITE)
+        {
+            get(pos, 7, 8);
+        }
+        if (board[8][6] == WHITE && board[8][8] == WHITE)
+        {
+            get(pos, 8, 7);
+        }
+        if (board[8][6] == WHITE && board[9][7] == WHITE)
+        {
+            get(pos, 7, 5);
+        }
+        // 第二步白棋下右上
+        if (board[6][8] == WHITE && board[9][7] == WHITE)
+        {
+            get(pos, 8, 8);
+        }
+        if (board[6][8] == WHITE && board[6][7] == WHITE)
+        {
+            get(pos, 6, 6);
+        }
+        if (board[6][8] == WHITE && board[7][9] == WHITE)
+        {
+            get(pos, 7, 6);
+        }
+        if (board[6][8] == WHITE && board[6][6] == WHITE)
+        {
+            get(pos, 6, 7);
+        }
+        if (board[6][8] == WHITE && board[5][7] == WHITE)
+        {
+            get(pos, 7, 9);
+        }
+        // 第二步白棋下左上
+        if (board[6][6] == WHITE && board[6][7] == WHITE)
+        {
+            get(pos, 6, 8);
+        }
+        if (board[6][6] == WHITE && board[9][7] == WHITE)
+        {
+            get(pos, 8, 6);
+        }
+        if (board[6][6] == WHITE && board[7][5] == WHITE)
+        {
+            get(pos, 7, 8);
+        }
+        if (board[6][6] == WHITE && board[6][8] == WHITE)
+        {
+            get(pos, 6, 7);
+        }
+        if (board[6][6] == WHITE && board[5][7] == WHITE)
+        {
+            get(pos, 7, 5);
+        }
+
+        // 第二步白棋下下面
+        if (board[8][7] == WHITE && (board[9][5] == WHITE || board[9][6] == WHITE))
+        {
+            get(pos, 6, 8);
+        }
+        if (board[8][7] == WHITE && board[6][8] == WHITE)
+        {
+            get(pos, 9, 6);
+        }
+        if (board[8][7] == WHITE && board[7][8] == WHITE)
+        {
+            get(pos, 9, 5);
+        }
+        if (board[8][7] == WHITE && board[7][6] == WHITE)
+        {
+            get(pos, 6, 5);
+        }
+        // 第二步白棋下左面
+        if (board[7][6] == WHITE && (board[9][5] == WHITE || board[8][5] == WHITE))
+        {
+            get(pos, 6, 8);
+        }
+        if (board[7][6] == WHITE && board[6][8] == WHITE)
+        {
+            get(pos, 8, 5);
+        }
+        if (board[7][6] == WHITE && board[6][7] == WHITE)
+        {
+            get(pos, 9, 5);
+        }
+        if (board[7][6] == WHITE && board[8][7] == WHITE)
+        {
+            get(pos, 6, 5);
+        }
+        // 第二步白棋下上面
+        if (board[6][7] == WHITE && (board[5][8] == WHITE || board[5][9] == WHITE))
+        {
+            get(pos, 8, 6);
+        }
+        if (board[6][7] == WHITE && board[8][6] == WHITE)
+        {
+            get(pos, 5, 8);
+        }
+        if (board[6][7] == WHITE && board[7][6] == WHITE)
+        {
+            get(pos, 5, 9);
+        }
+        if (board[6][7] == WHITE && board[7][8] == WHITE)
+        {
+            get(pos, 5, 6);
+        }
+        // 第二步白棋下右面
+        if (board[7][8] == WHITE && (board[5][9] == WHITE || board[6][9] == WHITE))
+        {
+            get(pos, 8, 6);
+        }
+        if (board[7][8] == WHITE && board[8][7] == WHITE)
+        {
+            get(pos, 5, 9);
+        }
+        if (board[7][8] == WHITE && board[8][6] == WHITE)
+        {
+            get(pos, 6, 9);
+        }
+        if (board[7][8] == WHITE && board[6][7] == WHITE)
+        {
+            get(pos, 5, 6);
+        }
+    }
+    if (step == 7)
+    {
+        if (board[8][8] == WHITE && board[5][7] == WHITE && board[8][6] == WHITE && board[6][8] == BLACK)
+        {
+            get(pos, 8, 9);
+        }
+        if (board[8][8] == WHITE && board[5][7] == WHITE && board[8][6] == WHITE && board[6][6] == BLACK)
+        {
+            get(pos, 8, 5);
+        }
+        if (board[8][8] == WHITE && board[5][7] == WHITE && board[5][9] == WHITE)
+        {
+            get(pos, 5, 8);
+        }
+        if (board[8][6] == WHITE && board[5][7] == WHITE && board[5][5] == WHITE)
+        {
+            get(pos, 5, 6);
+        }
+    }
+    if (step == 9)
+    {
+        if (board[8][8] == WHITE && board[5][7] == WHITE && board[5][9] == WHITE && board[7][6] == WHITE)
+        {
+            get(pos, 6, 9);
+        }
+        if (board[8][6] == WHITE && board[5][7] == WHITE && board[5][5] == WHITE && board[7][8] == WHITE)
+        {
+            get(pos, 6, 5);
+        }
+    }
+    if (step == 4)
+    {
+        if (board[7][7] == BLACK && board[6][7] == BLACK)
+        {
+            get(pos, 5, 7);
+        }
+        if (board[7][7] == BLACK && board[7][6] == BLACK)
+        {
+            get(pos, 7, 5);
+        }
+        if (board[7][7] == BLACK && board[7][8] == BLACK)
+        {
+            get(pos, 7, 9);
+        }
+        if (board[7][7] == BLACK && board[8][7] == BLACK)
+        {
+            get(pos, 9, 7);
+        }
+        if (board[7][7] == BLACK && board[6][8] == BLACK)
+        {
+            get(pos, 8, 6);
+        }
+        if (board[7][7] == BLACK && board[8][6] == BLACK)
+        {
+            get(pos, 6, 8);
+        }
+        if (board[7][7] == BLACK && board[6][6] == BLACK)
+        {
+            get(pos, 8, 7);
+        }
+    }
+    if (step == 6)
+    {
+        if (board[7][7] == BLACK && board[6][7] == BLACK && board[6][8] == BLACK)
+        {
+            get(pos, 8, 6);
+        }
+        if (board[7][7] == BLACK && board[6][7] == BLACK && board[7][6] == BLACK)
+        {
+            get(pos, 7, 5);
+        }
+        if (board[7][7] == BLACK && board[6][6] == BLACK && board[8][6] == BLACK)
+        {
+            get(pos, 6, 8);
+        }
+        if (board[7][7] == BLACK && board[7][6] == BLACK && board[8][6] == BLACK)
+        {
+            get(pos, 6, 8);
+        }
+    }
+    if (step == 225)
     {
         for (int i = 0; i < BOARD_SIZE; i++)
         {
@@ -196,21 +460,25 @@ void AImove()
             }
         }
     }
-    else
+    if (!isInBounds(pos->x, pos->y))
     {
-        // int DEPTH = 6;
-        // MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        if (player == WHITE)
-        {
-            int DEPTH = 6;
-            MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        }
-        else
-        {
-            int DEPTH = 8;
-            MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
-        }
+        cnt = 0;
+        int DEPTH = 8;
+        MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // if (player == WHITE)
+        // {
+        //     cnt = 0;
+        //     int DEPTH = 6;
+        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // }
+        // else
+        // {
+        //     cnt = 0;
+        //     int DEPTH = 8;
+        //     MinMax(player, pos, DEPTH, -MAX_SCORE, MAX_SCORE, DEPTH);
+        // }
     }
+    printf("%d\n", cnt);
     printf("第 %d 手下在 %c %d\n", step, pos->x + 'A', 15 - pos->y);
     if (!isInBounds(pos->x, pos->y))
     {

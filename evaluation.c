@@ -530,7 +530,7 @@ bool judge_next(int x, int y, int color) {
 }
 
 int value[BOARD_SIZE][BOARD_SIZE][2], TotalValue[BOARD_SIZE][BOARD_SIZE];
-void GetSingleScore(int x, int y, int color) {
+void GetSingleScore(int x, int y) {
     for (int i = 0; i < 2; i++) {
         Status nowStatus = Value_Board[x][y][i];
         int score = 0;

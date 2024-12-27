@@ -18,7 +18,9 @@ int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_
                         }
                     }
             }
-    for (int i = 0; i < BOARD_SIZE; i++)
+    // for (int j = BOARD_SIZE - 1; j >= 0; j--)
+        for (int i = BOARD_SIZE - 1; i >= 0; i--)
+    // for (int i = 0; i < BOARD_SIZE; i++)
         for (int j = 0; j < BOARD_SIZE; j++)
             if (vis[i][j])
             {
@@ -45,8 +47,7 @@ int GetPoints(PTR_To_Point Points, int color, bool flag, bool *flag_if_win, PTR_
                     Points[index].y = j;
                     if (flag)
                     {
-                        
-                        GetSingleScore(i, j, color);
+                        GetSingleScore(i, j);
                         Points[index].score = TotalValue[i][j];
                     }
                     index++;
@@ -105,6 +106,56 @@ void mergesort(PTR_To_Point s, int l, int r)
     merge(s, l, r);
 }
 
+void quicksort(PTR_To_Point s, int left, int right)
+{
+    int i, j;
+    if (left < right)
+    {
+        i = left;
+        j = right + 1;
+        while (1)
+        {
+            do
+            {
+                i++;
+            } while (i < right && s[i].score >= s[left].score);
+            do
+            {
+                j--;
+            } while (j > left && s[j].score <= s[left].score);
+            if (i < j)
+            {
+                int temp;
+                temp = s[i].score;
+                s[i].score = s[j].score;
+                s[j].score = temp;
+                temp = s[i].x;
+                s[i].x = s[j].x;
+                s[j].x = temp;
+                temp = s[i].y;
+                s[i].y = s[j].y;
+                s[j].y = temp;
+            }
+            else
+            {
+                break;
+            }
+        }
+        int temp;
+        temp = s[j].score;
+        s[j].score = s[left].score;
+        s[left].score = temp;
+        temp = s[j].x;
+        s[j].x = s[left].x;
+        s[left].x = temp;
+        temp = s[j].y;
+        s[j].y = s[left].y;
+        s[left].y = temp;
+        quicksort(s, j + 1, right);
+        quicksort(s, left, j - 1);
+    }
+}
+
 int Find_base_point(int color)
 {
 
@@ -143,9 +194,11 @@ int Find_base_point(int color)
 
 int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXDEPTH)
 {
+    ++cnt;
     if (depth == 0 || tot + 1 == BOARD_SIZE * BOARD_SIZE)
     {
         int value = Find_base_point(color);
+        // printf("value = %d\n", value);
         return value;
     }
     PTR_To_Point Points = (PTR_To_Point)malloc(sizeof(Point) * 225);
@@ -201,9 +254,14 @@ int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXD
         LENGTH = n;
     }
     mergesort(Points, 0, n - 1);
+    // for (int i = 0; i < LENGTH; i++)
+    // {
+    //     printf("DEpth = %d, x = %c, y = %d, score = %d\n",depth, Points[i].x + 'A', 15 - Points[i].y, Points[i].score);
+    // }
     for (int i = 0; i < LENGTH; i++)
     {
         board[Points[i].x][Points[i].y] = color;
+        // printf("depth = %d, x = %c, y = %d\n", depth, Points[i].x + 'A',15 - Points[i].y);
         tot++;
         int score = -MinMax(3 - color, pos, depth - 1, -beta, -alpha, MAXDEPTH);
         tot--;
@@ -212,7 +270,7 @@ int MinMax(int color, PTR_To_Point pos, int depth, int alpha, int beta, int MAXD
         {
             alpha = score;
             if (depth == MAXDEPTH)
-            {
+            {            
                 pos->x = Points[i].x;
                 pos->y = Points[i].y;
             }

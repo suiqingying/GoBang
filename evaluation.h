@@ -32,7 +32,7 @@ typedef struct Status {
     int Rush_2; //合法冲2
 } Status;
 
-void GetSingleScore(int x, int y, int color);
+void GetSingleScore(int x, int y);
 int GetWholeScore(int color);
 
 bool judge(int x, int y, int player);
@@ -47,3 +47,5 @@ extern int value[BOARD_SIZE][BOARD_SIZE][2], TotalValue[BOARD_SIZE][BOARD_SIZE];
 bool judge_next(int x, int y, int color);
 void GetStatus(int x, int y, int color);
 bool Noban(int x, int y, int direction, int num, int fl);
+
+extern int cnt;
