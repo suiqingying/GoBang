@@ -1,25 +1,18 @@
 #include "draw.h"
 
-#define Value_Right_5 50000
-#define Value_Living_4 4320
-#define Value_Rush_4 720
-#define Value_Living_3 720
-#define Value_Rush_3 100
-#define Value_Living_2 120
-#define Value_Rush_2 20
-
-#define Sef_Value_Living_4 100000
-#define Rival_Value_Living_4 10000000
-#define Sef_Value_Rush_4 720
-#define Rival_Value_Rush_4 1000000
-#define Sef_Value_Living_3 720
-#define Rival_Value_Living_3 50000
-#define Sef_Value_Rush_3 480
-#define Rival_Value_Rush_3 720
-#define Sef_Value_Living_2 480
-#define Rival_Value_Living_2 480
-#define Sef_Value_Rush_2 20
-#define Rival_Value_Rush_2 100
+#define Value_Right_5 100000
+#define Value_Living_4 10000
+#define Value_Rush_4 1000
+#define Value_Living_3 800
+#define Value_Rush_3 300
+#define Value_Living_2 200
+#define Value_Rush_2 100
+#define SHA 2400
+#define KUAISHA 1600
+#define KUAIXIAOSHA 1200
+#define JIAOCHA 1000
+#define YITUAN 700
+#define YIXIAOTUAN 550
 
 typedef struct Status {
     bool Too_long; //长连（对于黑棋而言）
